@@ -1,0 +1,205 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp306799lfe;
+        Sat, 30 Aug 2014 04:54:04 -0700 (PDT)
+Return-Path: <scala-user+bncBD7JJLPSYYDRBWPWQ2QAKGQEOL4ZGAI@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBD7JJLPSYYDRBWPWQ2QAKGQEOL4ZGAI@googlegroups.com designates 10.140.36.66 as permitted sender) client-ip=10.140.36.66
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBD7JJLPSYYDRBWPWQ2QAKGQEOL4ZGAI@googlegroups.com designates 10.140.36.66 as permitted sender) smtp.mail=scala-user+bncBD7JJLPSYYDRBWPWQ2QAKGQEOL4ZGAI@googlegroups.com;
+       dkim=pass header.i=@gmail.com
+X-Received: from mr.google.com ([10.140.36.66])
+        by 10.140.36.66 with SMTP id o60mr6235qgo.28.1409399644172 (num_hops = 1);
+        Sat, 30 Aug 2014 04:54:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version
+         :x-original-sender:precedence:mailing-list:list-id:list-post
+         :list-help:list-archive:sender:list-subscribe:list-unsubscribe
+         :content-type;
+        bh=UMN9YF7fV6ZEHpYfSGt7R312s+XkYV0etwVWi8UnBa4=;
+        b=oi6Pxn4glQZeQmHRgxdRBS50ga2ckGFQK3j8AFWIVbDF0iMVXU1U/wod3mPO9oFNNA
+         061AveE5ggmMGqHmqy4PIdZuBPg2OgwXx0/REroEu0Gt5JqDQltDvbodO72zIu5wYiBf
+         /6vjsiJNByqScwx0g11HnXJE3/cdKToTOvi0U+xloV8KeKJKN58TNUN638E2ESuP6tpS
+         fkvsx6sPg2ZEHTycM74vdJCdNzh0f58U/cDflo2jLZU76tDrRc0TqWAFGlKvFVWaRnVt
+         rcz6cBgsxwW1TSbE+IybM8kkeDumi715R78YX4eVTESeAUhhE7dDAyGZ8DbPH14s/RAe
+         fdgA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version
+         :x-original-sender:precedence:mailing-list:list-id:list-post
+         :list-help:list-archive:sender:list-subscribe:list-unsubscribe
+         :content-type;
+        bh=UMN9YF7fV6ZEHpYfSGt7R312s+XkYV0etwVWi8UnBa4=;
+        b=GQYBVhrHZ2TFClgcxmyht3JrYrTh/fs6gcKWSr7NhuwdECL0zmvPJDTe/SWEhR6+/m
+         QYcIr2rISrG/ZXeIuWtiyPUQOm/sLkJ2aSXe3yobhCCPU5y1Vc/p1oClSftoHAZKnafT
+         PuWEKCiMu5/8EEQJG3nPC5KVJwPxzfvjptoKzjI+iKLG/Zo1kye4R1bkXF235Elqsrnx
+         L7V9LVHhCkCTrPIz9QqG9Q+yLJGph7fXyWfFqAhTem5v4GL/H6VVZoCAVkzoLBDkihRs
+         EZnLt2+untLyU8AgNbSDRQ61MtSfWMvV7mLFWXLgqFnzMaH2QEvLCfM0wLp+gmmMfZbH
+         CsQg==
+X-Received: by 10.140.36.66 with SMTP id o60mr1042qgo.28.1409399643504;
+        Sat, 30 Aug 2014 04:54:03 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.140.109.246 with SMTP id l109ls519109qgf.1.gmail; Sat, 30 Aug
+ 2014 04:54:00 -0700 (PDT)
+X-Received: by 10.140.100.182 with SMTP id s51mr697qge.29.1409399640840;
+        Sat, 30 Aug 2014 04:54:00 -0700 (PDT)
+Date: Sat, 30 Aug 2014 04:54:00 -0700 (PDT)
+From: Guillaume Galy <guilgaly@gmail.com>
+To: scala-user@googlegroups.com
+Message-Id: <7e1c5cb5-37c2-4c3e-b529-b07f6e5d22c8@googlegroups.com>
+In-Reply-To: <CAA=X4ODic3VvmmubibVk-BX1L9bVUProiBB6iWr_hGVLtNwNyA@mail.gmail.com>
+References: <CAA=X4ODic3VvmmubibVk-BX1L9bVUProiBB6iWr_hGVLtNwNyA@mail.gmail.com>
+Subject: [scala-user] Re: Finding which URLs SBT needs?
+MIME-Version: 1.0
+X-Original-Sender: guilgaly@gmail.com
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1150_10345173.1409399640386"
+
+------=_Part_1150_10345173.1409399640386
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+According to the SBT documentation=20
+<http://www.scala-sbt.org/0.13/docs/Resolvers.html>, default resolvers are =
+:
+- DefaultMavenRepository, the main Maven 2 repo :=20
+http://repo1.maven.org/maven2/
+- JavaNet1Repository : http://download.java.net/maven/1/
+
+Others are accessible from the Resolver object, based on the following base=
+=20
+URLs (I had a look at the source code) :
+- https://oss.sonatype.org/content/repositories/
+- http://repo.scala-sbt.org/scalasbt
+- http://repo.typesafe.com/typesafe
+
+For instance, if you do : resolvers +=3D Opts.resolver.sonatypeReleases
+you're adding a resolver created by : Resolver.sonatypeRepo("releases")
+which returns a resolver with the URL :=20
+https://oss.sonatype.org/content/repositories/releases
+
+Of all those repositories, I think that at least Maven Central (
+http://repo1.maven.org/maven2/), Typesafe releases (
+http://repo.typesafe.com/typesafe/releases) and SBT plugin releases (
+http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases) will be used even=
+=20
+if you didn't add any repository to your build - but I think that you=20
+probably want to allow all of them.
+
+Of course, for a company, it can be a good idea to setup your own proxy=20
+repository, available from within your companie's network (especially if=20
+you have many developpers using SBT/Maven/etc.). See:=20
+http://www.scala-sbt.org/0.13.5/docs/Detailed-Topics/Proxy-Repositories.htm=
+l
+
+--
+Guillaume Galy
+
+
+Le mercredi 27 ao=C3=BBt 2014 14:54:41 UTC+2, Oliver Ruebenacker a =C3=A9cr=
+it :
+>
+>
+>      Hello,
+>
+>   SBT fails to obtain some dependencies when inside a company firewall. I=
+=20
+> suspect this is because the necessary URLs are blocked. I can request=20
+> unblocking, but I would have to know which ones are needed. How can I fin=
+d=20
+> out?
+>
+>   Thanks!
+>
+>      Best,
+>      Oliver
+>
+> --=20
+> Oliver Ruebenacker
+> Solutions Architect at Altisource Labs <http://www.altisourcelabs.com/>
+> Be always grateful, but never satisfied.
+> =20
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+------=_Part_1150_10345173.1409399640386
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">According to the <a href=3D"http://www.scala-sbt.org/0.13/=
+docs/Resolvers.html">SBT documentation</a>, default resolvers are :<br>- <c=
+ode>DefaultMavenRepository, </code>the main Maven 2 repo : <a href=3D"http:=
+//repo1.maven.org/maven2/">http://repo1.maven.org/maven2/</a><br>- <code>Ja=
+vaNet1Repository </code>: <a href=3D"http://download.java.net/maven/1/">htt=
+p://download.java.net/maven/1/</a><br><br>Others are accessible from the Re=
+solver object, based on the following base URLs (I had a look at the source=
+ code) :<br>- https://oss.sonatype.org/content/repositories/<br>- http://re=
+po.scala-sbt.org/scalasbt<br>- http://repo.typesafe.com/typesafe<br><br>For=
+ instance, if you do<span style=3D"font-family: courier new,monospace;"> : =
+resolvers +=3D Opts.resolver.sonatypeReleases</span><br>you're adding a res=
+olver created by<span style=3D"font-family: courier new,monospace;"> : Reso=
+lver.sonatypeRepo("releases"</span>)<br>which returns a resolver with the U=
+RL : <a href=3D"https://oss.sonatype.org/content/repositories/releases">htt=
+ps://oss.sonatype.org/content/repositories/releases</a><br><br>Of all those=
+ repositories, I think that at least Maven Central (<a href=3D"http://repo1=
+.maven.org/maven2/">http://repo1.maven.org/maven2/</a>), Typesafe releases =
+(<a href=3D"http://repo.typesafe.com/typesafe/releases">http://repo.typesaf=
+e.com/typesafe/releases</a>) and SBT plugin releases (<span id=3D"id25"><sp=
+an id=3D"id26"><code class=3D"plain"><a href=3D"http://repo.scala-sbt.org/s=
+calasbt/sbt-plugin-releases"><span style=3D"font-family: arial,sans-serif;"=
+>http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases</span></a>)</code><=
+/span></span> will be used even if you didn't add any repository to your bu=
+ild - but I think that you probably want to allow all of them.<br><br>Of co=
+urse, for a company, it can be a good idea to setup your own proxy reposito=
+ry, available from within your companie's network (especially if you have m=
+any developpers using SBT/Maven/etc.). See: <a href=3D"http://www.scala-sbt=
+.org/0.13.5/docs/Detailed-Topics/Proxy-Repositories.html">http://www.scala-=
+sbt.org/0.13.5/docs/Detailed-Topics/Proxy-Repositories.html</a><br><br>--<b=
+r>Guillaume Galy<br><br><br>Le mercredi 27 ao=C3=BBt 2014 14:54:41 UTC+2, O=
+liver Ruebenacker a =C3=A9crit&nbsp;:<blockquote class=3D"gmail_quote" styl=
+e=3D"margin: 0;margin-left: 0.8ex;border-left: 1px #ccc solid;padding-left:=
+ 1ex;"><div dir=3D"ltr"><div><br></div>&nbsp; &nbsp; &nbsp;Hello,<div><br><=
+/div><div>&nbsp; SBT fails to obtain some dependencies when inside a compan=
+y firewall. I suspect this is because the necessary URLs are blocked. I can=
+ request unblocking, but I would have to know which ones are needed. How ca=
+n I find out?</div>
+<div><br></div><div>&nbsp; Thanks!</div><div><br></div><div>&nbsp; &nbsp; &=
+nbsp;Best,</div><div>&nbsp; &nbsp; &nbsp;Oliver<br clear=3D"all"><div><br><=
+/div>-- <br><div dir=3D"ltr"><div>Oliver Ruebenacker<br></div><div>Solution=
+s Architect at <a href=3D"http://www.altisourcelabs.com/" target=3D"_blank"=
+ onmousedown=3D"this.href=3D'http://www.google.com/url?q\75http%3A%2F%2Fwww=
+.altisourcelabs.com%2F\46sa\75D\46sntz\0751\46usg\75AFQjCNHRG3OpKNzez3_hxhq=
+jKQUskx_0RQ';return true;" onclick=3D"this.href=3D'http://www.google.com/ur=
+l?q\75http%3A%2F%2Fwww.altisourcelabs.com%2F\46sa\75D\46sntz\0751\46usg\75A=
+FQjCNHRG3OpKNzez3_hxhqjKQUskx_0RQ';return true;">Altisource Labs</a><br>
+</div>Be always grateful, but never satisfied.<br></div>
+</div></div>
+</blockquote></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+------=_Part_1150_10345173.1409399640386--

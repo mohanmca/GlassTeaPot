@@ -1,0 +1,108 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp560166lfe;
+        Mon, 1 Sep 2014 09:03:54 -0700 (PDT)
+Return-Path: <scala-user+bncBDHJ34VW7QKBBZ5RSKQAKGQELLY6NXY@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBDHJ34VW7QKBBZ5RSKQAKGQELLY6NXY@googlegroups.com designates 10.140.83.180 as permitted sender) client-ip=10.140.83.180
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBDHJ34VW7QKBBZ5RSKQAKGQELLY6NXY@googlegroups.com designates 10.140.83.180 as permitted sender) smtp.mail=scala-user+bncBDHJ34VW7QKBBZ5RSKQAKGQELLY6NXY@googlegroups.com;
+       dkim=pass header.i=@gmail.com
+X-Received: from mr.google.com ([10.140.83.180])
+        by 10.140.83.180 with SMTP id j49mr4872499qgd.1.1409587433896 (num_hops = 1);
+        Mon, 01 Sep 2014 09:03:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version
+         :x-original-sender:precedence:mailing-list:list-id:list-post
+         :list-help:list-archive:sender:list-subscribe:list-unsubscribe
+         :content-type;
+        bh=0XIwusYyyl7N/5kzPuXhCvmcI8UvTV57JYJk+fimMZk=;
+        b=CpFzkX1pYIRzKxjKXEtEmP6/R6mI7XUyLZHFaaqupFbaDC9E5Os7UVj837RfSMo6lM
+         d54RBKWWj6nviz5PEGmNA8OZwpFcYjyMcTqrBMgX54ZMGqgB8RTgAUN6yY2BQfKVALJI
+         GYkm8C/hF7XFrtcUZkxJEIzTw8C2tNRkPKTEq4rCMngjbx+hJx4h8qabgY68zItJjHTs
+         GhyAAY6mYqZPLjvZb8Czbi72LiA2ql6FnhLMzQ1RiXoKDTXOJ7GTLNLQQbS26weNrWjI
+         1Y5T63Ly5r6PakM5SNhO3/D4TYxRLwNcgppBu02jWr2usIt/cKqzknzWPRga5V0kH6qI
+         No0w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version
+         :x-original-sender:precedence:mailing-list:list-id:list-post
+         :list-help:list-archive:sender:list-subscribe:list-unsubscribe
+         :content-type;
+        bh=0XIwusYyyl7N/5kzPuXhCvmcI8UvTV57JYJk+fimMZk=;
+        b=ZRh6sPIND+MKFnpt1xenAiaJa6KEHGrP9SEgzOJYQnfKm6oD78I8S3ifStCNbWBLtq
+         vPFRTAC29u9JFP7mEwA41uLp5QfzLL9Ovpw0GZ4RcAv8QPQb5WfcMuUpLjzvnXkLzQlY
+         ytLgkwBNCexDxahFutca3NgRTtykoKalMMJBdZxQC/X+gG4l3FNZjgYjHozfaDBX8x6p
+         C10GYhxdDCRFf0Qfy49HBRdciaZO3qsiHk0Kw1WpSVcRhPWBhnejrAw+s1HXtK99jr4q
+         G966MYmyHWHijmH6RplezZ1Z/d54a0r2VQLxJ75ahbzi3xWZzcnwlabOTvCtUn5HILYL
+         K6TQ==
+X-Received: by 10.140.83.180 with SMTP id j49mr669616qgd.1.1409587433494;
+        Mon, 01 Sep 2014 09:03:53 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.140.49.235 with SMTP id q98ls2041518qga.91.gmail; Mon, 01 Sep
+ 2014 09:03:51 -0700 (PDT)
+X-Received: by 10.140.93.181 with SMTP id d50mr643397qge.0.1409587431042;
+        Mon, 01 Sep 2014 09:03:51 -0700 (PDT)
+Date: Mon, 1 Sep 2014 09:03:50 -0700 (PDT)
+From: Grant Beaty <gbeaty@gmail.com>
+To: scala-user@googlegroups.com
+Message-Id: <1cf7268d-8de9-4e1d-957d-1914ea3a3894@googlegroups.com>
+In-Reply-To: <5d8c35e7-6ac2-41e3-a0dc-fd8cbf2afd1e@googlegroups.com>
+References: <2d22b6c7-afb0-4245-bed6-03ff641b208e@googlegroups.com>
+ <5d8c35e7-6ac2-41e3-a0dc-fd8cbf2afd1e@googlegroups.com>
+Subject: [scala-user] Re: scunits - experimental units of measure library
+MIME-Version: 1.0
+X-Original-Sender: gbeaty@gmail.com
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_2082_1941423659.1409587430562"
+
+------=_Part_2082_1941423659.1409587430562
+Content-Type: text/plain; charset=UTF-8
+
+Yes, I use type-level ints as ids on the base quantities so they are 
+comparable. I need to order the quantities as I construct the Dims, so 
+basically need a type-level Ordering. I will look into a way to construct 
+this ordering with a macro.
+
+I'm also working on improving how abstract Dims are simplified.
+
+/Grant
+
+-- 
+You received this message because you are subscribed to the Google Groups "scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+------=_Part_2082_1941423659.1409587430562
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Yes, I use type-level ints as ids on the base quantit=
+ies so they are comparable. I need to order the quantities as I construct t=
+he Dims, so basically need a type-level Ordering. I will look into a way to=
+ construct this ordering with a macro.</div><div><br></div><div>I'm also wo=
+rking on improving how abstract Dims are simplified.</div><div><br></div><d=
+iv>/Grant</div></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+------=_Part_2082_1941423659.1409587430562--

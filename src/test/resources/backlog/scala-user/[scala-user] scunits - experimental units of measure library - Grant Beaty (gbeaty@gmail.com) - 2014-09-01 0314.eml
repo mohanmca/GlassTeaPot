@@ -1,0 +1,146 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp444627lfe;
+        Sun, 31 Aug 2014 12:14:45 -0700 (PDT)
+Return-Path: <scala-user+bncBDHJ34VW7QKBBIXIRWQAKGQE7JSOP2Y@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBDHJ34VW7QKBBIXIRWQAKGQE7JSOP2Y@googlegroups.com designates 10.140.19.213 as permitted sender) client-ip=10.140.19.213
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBDHJ34VW7QKBBIXIRWQAKGQE7JSOP2Y@googlegroups.com designates 10.140.19.213 as permitted sender) smtp.mail=scala-user+bncBDHJ34VW7QKBBIXIRWQAKGQE7JSOP2Y@googlegroups.com;
+       dkim=pass header.i=@gmail.com
+X-Received: from mr.google.com ([10.140.19.213])
+        by 10.140.19.213 with SMTP id 79mr3509275qgh.5.1409512485087 (num_hops = 1);
+        Sun, 31 Aug 2014 12:14:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=date:from:to:message-id:subject:mime-version:x-original-sender
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :sender:list-subscribe:list-unsubscribe:content-type;
+        bh=eqk1yFgMrqCh2cftnnRlBKQ35u918BSm0H06U62w2M4=;
+        b=W4Q56k2PEzjdEmUocSrU6D9ppIm2pX083HMCu0lzpW9y56x9+7lqaKo3tPuk/9R9pz
+         UECTW+Jv9+TtB0Q0jfoS/+/blBN5jHf8qjsXaXgkld8tmVw+xPTCZG6sY3p6haa2YC13
+         VHIIaZNMU5vajJd4GiwZqI+Lynnfckc3f2QlucRrSLk+dD2jFB6u1livLsT50FTybbeZ
+         pMm0a3JLlQtfHZkUWYszRNRVouf6RBr3qa07qA3rx9Bow/8BIjnRcLbBdt6pEvBZn12S
+         UDIHk9evhaK50xZtK2C/fTDNp8H21uvu91nZR9IA9SzG5jb9vAM+JyEWECvtUVuGs8CB
+         n3jw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:x-original-sender
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :sender:list-subscribe:list-unsubscribe:content-type;
+        bh=eqk1yFgMrqCh2cftnnRlBKQ35u918BSm0H06U62w2M4=;
+        b=NodRZzjkC96+v6y38sGfOMXo/6/3UqPmjNThrCQvf2qznD++pxwsM0jmi14LSIjZMO
+         GQxS7r8t54j6+J87mgpnpdcKaMVG3ULp5vzRlfP3vxsb4+NA+lHQBOudl6L0GfM93kwc
+         4RB36hTxioWk/CfpR74yfAvPTFB+9qISn486MwTSRYdGKXMy73yR4HOuwVnpbDl7K4ew
+         zGyUPNSBkp3egVZaVs8a0HSgpkVKdVcTwyqaZ2TW3hWVBXKtMUSVKcafQhGDVkSZ5gbs
+         I0mjvM4m03A0TZIqHtxaD4QvCMfbxmdFaWiI8ib8Kz8obq5/+vQG1pzI/xZBqqYEUUQC
+         /PZw==
+X-Received: by 10.140.19.213 with SMTP id 79mr471096qgh.5.1409512484700;
+        Sun, 31 Aug 2014 12:14:44 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.140.88.6 with SMTP id s6ls1691246qgd.22.gmail; Sun, 31 Aug
+ 2014 12:14:42 -0700 (PDT)
+X-Received: by 10.140.102.104 with SMTP id v95mr66395qge.6.1409512482493;
+        Sun, 31 Aug 2014 12:14:42 -0700 (PDT)
+Date: Sun, 31 Aug 2014 12:14:42 -0700 (PDT)
+From: Grant Beaty <gbeaty@gmail.com>
+To: scala-user@googlegroups.com
+Message-Id: <2d22b6c7-afb0-4245-bed6-03ff641b208e@googlegroups.com>
+Subject: [scala-user] scunits - experimental units of measure library
+MIME-Version: 1.0
+X-Original-Sender: gbeaty@gmail.com
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3_392137813.1409512482273"
+
+------=_Part_3_392137813.1409512482273
+Content-Type: text/plain; charset=UTF-8
+
+I've been exploring type-level programming in scala and created an 
+extensible library for units of measure. I'd be curious if anyone else 
+finds it useful?
+
+https://github.com/gbeaty/scunits
+
+scunits uses type-level lists of dimensions, but they differ from 
+shapeless' hlist types in that they are constructed entirely from recursive 
+`type` statements without the use of implicits. I didn't know what 
+implicits would do to run-time performance and wanted to keep everything 
+lean and of course value-classed. I also rolled my own type-level integers; 
+does anyone know if there's a small library for this anywhere? I don't want 
+to import shapeless or spire just for integer support.
+
+It differs from other units libraries I've seen in that:
+
+   - All measurements are value classes.
+   - Its extensible - new base quantities can be added by the user.
+   - Type errors are uniquely unreadable.
+   - Basic abstract algebra is possible, e.g. Measure[A] * (Measure[B] / 
+   Measure[A]) can be implicitly converted to Measure[A].
+   - Its small (so far...) and a good size for my Android projects.
+   - All measurements are stored as SI values and converted to other units 
+   when needed, reducing complexity.
+
+This is my first significant foray into type-level programming in scala, so 
+comments and criticisms are welcome.
+
+/Grant
+
+>
+
+-- 
+You received this message because you are subscribed to the Google Groups "scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+------=_Part_3_392137813.1409512482273
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">I've been exploring type-level programming in scala and cr=
+eated an extensible library for units of measure. I'd be curious if anyone =
+else finds it useful?<div><br></div><div>https://github.com/gbeaty/scunits<=
+/div><div><br></div><div>scunits uses type-level lists of dimensions, but t=
+hey differ from shapeless' hlist types in that they are constructed entirel=
+y from recursive `type`&nbsp;statements without the use of implicits. I did=
+n't know what implicits would do to run-time performance and wanted to keep=
+ everything lean and of course value-classed. I also rolled my own type-lev=
+el integers; does anyone know if there's a small library for this anywhere?=
+ I don't want to import shapeless or spire just for integer support.</div><=
+div><br></div><div>It differs from other units libraries I've seen in that:=
+</div><div><ul><li><span style=3D"line-height: normal;">All measurements ar=
+e value classes.</span></li><li><span style=3D"line-height: normal;">Its ex=
+tensible - new base quantities can be added by the user.</span></li><li><sp=
+an style=3D"line-height: normal;">Type errors are uniquely unreadable.</spa=
+n></li><li><span style=3D"line-height: normal;">Basic abstract algebra is p=
+ossible, e.g. Measure[A] * (Measure[B] / Measure[A]) can be implicitly conv=
+erted to Measure[A].</span></li><li><span style=3D"line-height: normal;">It=
+s small (so far...) and a good size for my Android projects.</span></li><li=
+><span style=3D"line-height: normal;">All measurements are stored as SI val=
+ues and converted to other units when needed, reducing complexity.</span></=
+li></ul>This is my first significant foray into type-level programming in s=
+cala, so comments and criticisms are welcome.</div><div><br></div><div>/Gra=
+nt<br></div><blockquote class=3D"gmail_quote" style=3D"margin: 0px 0px 0px =
+0.8ex; border-left-width: 1px; border-left-color: rgb(204, 204, 204); borde=
+r-left-style: solid; padding-left: 1ex;"></blockquote></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+------=_Part_3_392137813.1409512482273--

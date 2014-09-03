@@ -1,0 +1,306 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp554240lfe;
+        Mon, 1 Sep 2014 08:09:14 -0700 (PDT)
+Return-Path: <scala-user+bncBCY6JVX56YBRBFMYSKQAKGQEZLAZRDQ@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBCY6JVX56YBRBFMYSKQAKGQEZLAZRDQ@googlegroups.com designates 10.182.4.97 as permitted sender) client-ip=10.182.4.97
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBCY6JVX56YBRBFMYSKQAKGQEZLAZRDQ@googlegroups.com designates 10.182.4.97 as permitted sender) smtp.mail=scala-user+bncBCY6JVX56YBRBFMYSKQAKGQEZLAZRDQ@googlegroups.com;
+       dkim=pass header.i=@googlegroups.com
+X-Received: from mr.google.com ([10.182.4.97])
+        by 10.182.4.97 with SMTP id j1mr141484obj.23.1409584154276 (num_hops = 1);
+        Mon, 01 Sep 2014 08:09:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive:sender
+         :list-subscribe:list-unsubscribe:content-type;
+        bh=nTB7Yj0dgrmCPiFiviuXJo2PbL8uw9xrCEfAD5P2XO8=;
+        b=Pez+MfaUoAwZhTqhrhKYuqCEz893Iyc/z4SGWMo8qDRueEWTtvElfFgWVKs+BXZeKb
+         Yo8eGrU1evjOjCFFboE5y7fl3lTAjuf2Fn3Cv059zRQ5PF4gDu0MHehLlNntJxGNU+is
+         uVnSNL1en93fgMdNsKmOnsGQEczoJ2QW1uKKnUyBIaLfddB+TPzjy/Jr1LEFY4lZyi9v
+         nxYv+rIouQ0r3Ad1d+TPS91Nj9eV/ubltRr9h+lGaWS537tMB5ePSEvArA7Ib3VJcKQj
+         dQLg4bOgmZb7rXbqaAnH2Eda1vwdNbYE5j8XFzLWJ8TVRbZroI0iq+NFGNVbfRchxk7s
+         g4ig==
+X-Received: by 10.182.4.97 with SMTP id j1mr21191obj.23.1409584153519;
+        Mon, 01 Sep 2014 08:09:13 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.182.134.162 with SMTP id pl2ls725414obb.90.gmail; Mon, 01 Sep
+ 2014 08:09:08 -0700 (PDT)
+X-Received: by 10.182.115.229 with SMTP id jr5mr16677377obb.38.1409584148849;
+        Mon, 01 Sep 2014 08:09:08 -0700 (PDT)
+Received: from mail-qc0-x231.google.com (mail-qc0-x231.google.com [2607:f8b0:400d:c01::231])
+        by gmr-mx.google.com with ESMTPS id i4si236525qcm.0.2014.09.01.08.09.08
+        for <scala-user@googlegroups.com>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Mon, 01 Sep 2014 08:09:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of danarmak@gmail.com designates 2607:f8b0:400d:c01::231 as permitted sender) client-ip=2607:f8b0:400d:c01::231;
+Received: by mail-qc0-f177.google.com with SMTP id i8so5499466qcq.22
+        for <scala-user@googlegroups.com>; Mon, 01 Sep 2014 08:09:08 -0700 (PDT)
+X-Received: by 10.224.103.132 with SMTP id k4mr44900189qao.54.1409584148746;
+ Mon, 01 Sep 2014 08:09:08 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.140.130.65 with HTTP; Mon, 1 Sep 2014 08:08:47 -0700 (PDT)
+In-Reply-To: <CADtYB+=pLzmv0Q608Jr6trPu0zN5qdr_va7aVABvriGimniSmA@mail.gmail.com>
+References: <CADtYB+=pLzmv0Q608Jr6trPu0zN5qdr_va7aVABvriGimniSmA@mail.gmail.com>
+From: Daniel Armak <danarmak@gmail.com>
+Date: Mon, 1 Sep 2014 18:08:47 +0300
+Message-ID: <CADtYB+=hnObWxso1zhVNS=-4ojzD88U3qeJ_C-pRx45fDc0zow@mail.gmail.com>
+Subject: [scala-user] Re: The Nothing type and generic inference
+To: scala-user <scala-user@googlegroups.com>
+X-Original-Sender: danarmak@gmail.com
+X-Original-Authentication-Results: gmr-mx.google.com;       spf=pass
+ (google.com: domain of danarmak@gmail.com designates 2607:f8b0:400d:c01::231
+ as permitted sender) smtp.mail=danarmak@gmail.com;       dkim=pass
+ header.i=@gmail.com;       dmarc=pass (p=NONE dis=NONE) header.from=gmail.com
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; boundary=001a11c2cfc477976d05020262df
+
+--001a11c2cfc477976d05020262df
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+I forgot to mention that this is scala 2.10.4.
+
+Daniel Armak
+
+
+On Mon, Sep 1, 2014 at 6:03 PM, Daniel Armak <danarmak@gmail.com> wrote:
+
+> This code compiles fine:
+>
+> trait Trait[T]
+> def transform[T](in: Trait[T]): Trait[T] =3D in
+>
+> val in: Trait[String] =3D ???
+>
+> val out =3D transform(in)
+>
+> But this fails:
+>
+> val in: Trait[Nothing] =3D ???
+> val out =3D transform(in)
+>
+> Error:(33, 23) type mismatch;
+>  found   : com.fsist.work.DanielSandbox.Trait[Nothing]
+>  required: com.fsist.work.DanielSandbox.Trait[T]
+> Note: Nothing <: T, but trait Trait is invariant in type T.
+> You may wish to define T as +T instead. (SLS 4.5)
+>   val out =3D transform(in)
+>                       ^
+>
+> Nothing is a special type, but why can=E2=80=99t the compiler understand =
+that
+> transform should apply to every possible value?
+>
+> The weird thing is that specifying the generic type explicitly works. Thi=
+s
+> compiles:
+>
+> val in: Trait[Nothing] =3D ???
+> val out =3D transform[Nothing](in)
+>
+> Is specifying the cast explicitly a correct workaround? Is this a bug or
+> shortcoming, as opposed to a feature?
+>
+> The reason I have a Nothing in the first place is that I=E2=80=99m workin=
+g with
+> reflection, and I have a runtime.universe.Type, which is not a generic
+> type, so I don=E2=80=99t know T statically.
+>
+> Daniel Armak
+> =E2=80=8B
+>
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+--001a11c2cfc477976d05020262df
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">I forgot to mention that this is scala 2.10.4.</div><div c=
+lass=3D"gmail_extra"><br clear=3D"all"><div><div dir=3D"ltr">Daniel Armak</=
+div></div>
+<br><br><div class=3D"gmail_quote">On Mon, Sep 1, 2014 at 6:03 PM, Daniel A=
+rmak <span dir=3D"ltr">&lt;<a href=3D"mailto:danarmak@gmail.com" target=3D"=
+_blank">danarmak@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D"gm=
+ail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-le=
+ft:1ex">
+
+<div dir=3D"ltr"><div><p style=3D"margin:1.2em 0px!important">This code com=
+piles fine:</p>
+<pre style=3D"font-size:0.85em;font-family:Consolas,Inconsolata,Courier,mon=
+ospace;font-size:1em;line-height:1.2em;margin:1.2em 0px"><code style=3D"fon=
+t-size:0.85em;font-family:Consolas,Inconsolata,Courier,monospace;margin:0px=
+ 0.15em;padding:0px 0.3em;white-space:pre-wrap;border:1px solid rgb(234,234=
+,234);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-=
+right-radius:3px;border-bottom-left-radius:3px;display:inline;background-co=
+lor:rgb(248,248,248);white-space:pre-wrap;overflow:auto;border-top-left-rad=
+ius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-b=
+ottom-left-radius:3px;border:1px solid rgb(204,204,204);padding:0.5em 0.7em=
+;display:block!important;display:block;padding:0.5em;color:rgb(51,51,51);ba=
+ckground:rgb(248,248,255)">trait Trait[T]
+def transform[T](in: Trait[T]): Trait[T] =3D in
+
+val in: Trait[String] =3D ???
+
+val out =3D transform(in)
+</code></pre><p style=3D"margin:1.2em 0px!important">But this fails:</p>
+<pre style=3D"font-size:0.85em;font-family:Consolas,Inconsolata,Courier,mon=
+ospace;font-size:1em;line-height:1.2em;margin:1.2em 0px"><code style=3D"fon=
+t-size:0.85em;font-family:Consolas,Inconsolata,Courier,monospace;margin:0px=
+ 0.15em;padding:0px 0.3em;white-space:pre-wrap;border:1px solid rgb(234,234=
+,234);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-=
+right-radius:3px;border-bottom-left-radius:3px;display:inline;background-co=
+lor:rgb(248,248,248);white-space:pre-wrap;overflow:auto;border-top-left-rad=
+ius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-b=
+ottom-left-radius:3px;border:1px solid rgb(204,204,204);padding:0.5em 0.7em=
+;display:block!important;display:block;padding:0.5em;color:rgb(51,51,51);ba=
+ckground:rgb(248,248,255)">val in: Trait[Nothing] =3D ???
+val out =3D transform(in)
+
+Error:(33, 23) type mismatch;
+ found   : com.fsist.work.DanielSandbox.Trait[Nothing]
+ required: com.fsist.work.DanielSandbox.Trait[T]
+Note: Nothing &lt;: T, but trait Trait is invariant in type T.
+You may wish to define T as +T instead. (SLS 4.5)
+  val out =3D transform(in)
+                      ^
+</code></pre><p style=3D"margin:1.2em 0px!important"><code style=3D"font-si=
+ze:0.85em;font-family:Consolas,Inconsolata,Courier,monospace;margin:0px 0.1=
+5em;padding:0px 0.3em;white-space:pre-wrap;border:1px solid rgb(234,234,234=
+);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-righ=
+t-radius:3px;border-bottom-left-radius:3px;display:inline;background-color:=
+rgb(248,248,248)">Nothing</code> is a special type, but why can=E2=80=99t t=
+he compiler understand that <code style=3D"font-size:0.85em;font-family:Con=
+solas,Inconsolata,Courier,monospace;margin:0px 0.15em;padding:0px 0.3em;whi=
+te-space:pre-wrap;border:1px solid rgb(234,234,234);border-top-left-radius:=
+3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-botto=
+m-left-radius:3px;display:inline;background-color:rgb(248,248,248)">transfo=
+rm</code> should apply to every possible value?</p>
+
+
+
+<p style=3D"margin:1.2em 0px!important">The weird thing is that specifying =
+the generic type explicitly works. This compiles:</p>
+<pre style=3D"font-size:0.85em;font-family:Consolas,Inconsolata,Courier,mon=
+ospace;font-size:1em;line-height:1.2em;margin:1.2em 0px"><code style=3D"fon=
+t-size:0.85em;font-family:Consolas,Inconsolata,Courier,monospace;margin:0px=
+ 0.15em;padding:0px 0.3em;white-space:pre-wrap;border:1px solid rgb(234,234=
+,234);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-=
+right-radius:3px;border-bottom-left-radius:3px;display:inline;background-co=
+lor:rgb(248,248,248);white-space:pre-wrap;overflow:auto;border-top-left-rad=
+ius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-b=
+ottom-left-radius:3px;border:1px solid rgb(204,204,204);padding:0.5em 0.7em=
+;display:block!important;display:block;padding:0.5em;color:rgb(51,51,51);ba=
+ckground:rgb(248,248,255)">val in: Trait[Nothing] =3D ???
+val out =3D transform[Nothing](in)
+</code></pre><p style=3D"margin:1.2em 0px!important">Is specifying the cast=
+ explicitly a correct workaround? Is this a bug or shortcoming, as opposed =
+to a feature?</p>
+<p style=3D"margin:1.2em 0px!important">The reason I have a Nothing in the =
+first place is that I=E2=80=99m working with reflection, and I have a <code=
+ style=3D"font-size:0.85em;font-family:Consolas,Inconsolata,Courier,monospa=
+ce;margin:0px 0.15em;padding:0px 0.3em;white-space:pre-wrap;border:1px soli=
+d rgb(234,234,234);border-top-left-radius:3px;border-top-right-radius:3px;b=
+order-bottom-right-radius:3px;border-bottom-left-radius:3px;display:inline;=
+background-color:rgb(248,248,248)">runtime.universe.Type</code>, which is n=
+ot a generic type, so I don=E2=80=99t know <code style=3D"font-size:0.85em;=
+font-family:Consolas,Inconsolata,Courier,monospace;margin:0px 0.15em;paddin=
+g:0px 0.3em;white-space:pre-wrap;border:1px solid rgb(234,234,234);border-t=
+op-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3=
+px;border-bottom-left-radius:3px;display:inline;background-color:rgb(248,24=
+8,248)">T</code> statically.</p>
+
+<span class=3D"HOEnZb"><font color=3D"#888888">
+
+<p style=3D"margin:1.2em 0px!important">Daniel Armak </p>
+<div title=3D"MDH:VGhpcyBjb2RlIGNvbXBpbGVzIGZpbmU6PGRpdj48YnI+PC9kaXY+PGRpd=
+j5gYGA8L2Rpdj48ZGl2
+PjxkaXY+dHJhaXQgVHJhaXRbVF08L2Rpdj48ZGl2PmRlZiB0cmFuc2Zvcm1bVF0oaW46IFRyYWl=
+0
+W1RdKTogVHJhaXRbVF0gPSBpbjxicj48L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2PnZhbCBpbjo=
+g
+VHJhaXRbU3RyaW5nXSA9ID8/Pzxicj48L2Rpdj48ZGl2PnZhbCBvdXQgPSB0cmFuc2Zvcm0oaW4=
+p
+PC9kaXY+PGRpdj5gYGA8L2Rpdj48ZGl2PjxkaXYgZGlyPSJsdHIiPjxicj48L2Rpdj48L2Rpdj4=
+8
+ZGl2PkJ1dCB0aGlzIGZhaWxzOjwvZGl2PjxkaXY+YGBgPC9kaXY+PGRpdj48ZGl2PnZhbCBpbjo=
+g
+VHJhaXRbTm90aGluZ10gPSA/Pz88L2Rpdj48ZGl2PnZhbCBvdXQgPSB0cmFuc2Zvcm0oaW4pPC9=
+k
+aXY+PC9kaXY+PGRpdj48YnI+PC9kaXY+PGRpdj48ZGl2PkVycm9yOigzMywgMjMpIHR5cGUgbWl=
+z
+bWF0Y2g7PC9kaXY+PGRpdj4mbmJzcDtmb3VuZCAmbmJzcDsgOiBjb20uZnNpc3Qud29yay5EYW5=
+p
+ZWxTYW5kYm94LlRyYWl0W05vdGhpbmddPC9kaXY+PGRpdj4mbmJzcDtyZXF1aXJlZDogY29tLmZ=
+z
+aXN0LndvcmsuRGFuaWVsU2FuZGJveC5UcmFpdFtUXTwvZGl2PjxkaXY+Tm90ZTogTm90aGluZyA=
+m
+bHQ7OiBULCBidXQgdHJhaXQgVHJhaXQgaXMgaW52YXJpYW50IGluIHR5cGUgVC48L2Rpdj48ZGl=
+2
+PllvdSBtYXkgd2lzaCB0byBkZWZpbmUgVCBhcyArVCBpbnN0ZWFkLiAoU0xTIDQuNSk8L2Rpdj4=
+8
+ZGl2PiZuYnNwOyB2YWwgb3V0ID0gdHJhbnNmb3JtKGluKTwvZGl2PjxkaXY+Jm5ic3A7ICZuYnN=
+w
+OyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A=
+7
+ICZuYnNwOyBePC9kaXY+PC9kaXY+PGRpdj5gYGA8L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2PmB=
+O
+b3RoaW5nYCBpcyBhIHNwZWNpYWwgdHlwZSwgYnV0IHdoeSBjYW4ndCB0aGUgY29tcGlsZXIgdW5=
+k
+ZXJzdGFuZCB0aGF0IGB0cmFuc2Zvcm1gIHNob3VsZCBhcHBseSB0byBldmVyeSBwb3NzaWJsZSB=
+2
+YWx1ZT88L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2PlRoZSB3ZWlyZCB0aGluZyBpcyB0aGF0IHN=
+w
+ZWNpZnlpbmcgdGhlIGdlbmVyaWMgdHlwZSBleHBsaWNpdGx5IHdvcmtzLiBUaGlzIGNvbXBpbGV=
+z
+OjwvZGl2PjxkaXY+PGRpdj5gYGA8L2Rpdj48ZGl2PjxkaXY+dmFsIGluOiBUcmFpdFtOb3RoaW5=
+n
+XSA9ID8/PzwvZGl2PjxkaXY+dmFsIG91dCA9IHRyYW5zZm9ybVtOb3RoaW5nXShpbik8L2Rpdj4=
+8
+L2Rpdj48L2Rpdj48ZGl2PmBgYDwvZGl2PjxkaXY+PGJyPjwvZGl2PjxkaXY+SXMgc3BlY2lmeWl=
+u
+ZyB0aGUgY2FzdCBleHBsaWNpdGx5IGEgY29ycmVjdCB3b3JrYXJvdW5kPyBJcyB0aGlzIGEgYnV=
+n
+IG9yIHNob3J0Y29taW5nLCBhcyBvcHBvc2VkIHRvIGEgZmVhdHVyZT88L2Rpdj48ZGl2Pjxicj4=
+8
+L2Rpdj48ZGl2PlRoZSByZWFzb24gSSBoYXZlIGEgTm90aGluZyBpbiB0aGUgZmlyc3QgcGxhY2U=
+g
+aXMgdGhhdCBJJ20gd29ya2luZyB3aXRoIHJlZmxlY3Rpb24sIGFuZCBJIGhhdmUgYSBgcnVudGl=
+t
+ZS51bml2ZXJzZS5UeXBlYCwgd2hpY2ggaXMgbm90IGEgZ2VuZXJpYyB0eXBlLCBzbyBJIGRvbid=
+0
+IGtub3cgYFRgIHN0YXRpY2FsbHkuPC9kaXY+PGRpdj48YnI+PC9kaXY+PGRpdj5EYW5pZWwgQXJ=
+t
+YWs8L2Rpdj4KPC9kaXY+" style=3D"min-height:0;font-size:0em;padding:0;margin:=
+0">=E2=80=8B</div></font></span></div></div>
+</blockquote></div><br></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+--001a11c2cfc477976d05020262df--

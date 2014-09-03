@@ -1,0 +1,228 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp406183lfe;
+        Sun, 31 Aug 2014 04:47:46 -0700 (PDT)
+Return-Path: <scala-user+bncBCGOB3HTWICBBX4WRSQAKGQEO6JBYRI@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBCGOB3HTWICBBX4WRSQAKGQEO6JBYRI@googlegroups.com designates 10.180.74.233 as permitted sender) client-ip=10.180.74.233
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBCGOB3HTWICBBX4WRSQAKGQEO6JBYRI@googlegroups.com designates 10.180.74.233 as permitted sender) smtp.mail=scala-user+bncBCGOB3HTWICBBX4WRSQAKGQEO6JBYRI@googlegroups.com;
+       dkim=pass header.i=@googlegroups.com
+X-Received: from mr.google.com ([10.180.74.233])
+        by 10.180.74.233 with SMTP id x9mr504504wiv.1.1409485666854 (num_hops = 1);
+        Sun, 31 Aug 2014 04:47:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive:sender
+         :list-subscribe:list-unsubscribe:content-type;
+        bh=cIvUkXLmigzJE2CkZZMmwYtcmPFJlWSHqOdmaPrcWDw=;
+        b=AMl6UXoSaX2MFyT/SEkcVh6be0Lp0y2Uzri9Q4c0Mm12jfO96cTr3NwAPL8VeGrrzt
+         IbDwBfAa/skMpEYF2PpS2eNIPCnbbzIeRUdJLwSZDgXWLWhoFU1G5cBQlEPbsaJSqc2P
+         TG5kvA6JH2cgIm13NP2GWL0z688YeZHVxkVbGn8qLKliBcPsQLpvG3Os/4lcVzcoA8zx
+         t6zs8EL4vrib0PkQDTpDkrU78yYZ10wuQIN2OtRQW2vNJXAC2BrKCursz8YLGJUdJU7l
+         WvmSadIYDYeceqBQiz+lyCHooGiReMFLdeJIsIJorH7fswasD2yBpIJ6pPMW0wDkz+a5
+         ZZ2Q==
+X-Received: by 10.180.74.233 with SMTP id x9mr51579wiv.1.1409485666731;
+        Sun, 31 Aug 2014 04:47:46 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.180.73.51 with SMTP id i19ls279965wiv.5.gmail; Sun, 31 Aug
+ 2014 04:47:43 -0700 (PDT)
+X-Received: by 10.194.205.138 with SMTP id lg10mr3316wjc.5.1409485663186;
+        Sun, 31 Aug 2014 04:47:43 -0700 (PDT)
+Received: from smtp4.epfl.ch (slb-mail4.epfl.ch. [2001:620:618:1e0:1:80b2:e059:1])
+        by gmr-mx.google.com with ESMTPS id sg7si163405wic.3.2014.08.31.04.47.43
+        for <scala-user@googlegroups.com>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Sun, 31 Aug 2014 04:47:43 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning eugene.burmako@epfl.ch does not designate 2001:620:618:1e0:1:80b2:e059:1 as permitted sender) client-ip=2001:620:618:1e0:1:80b2:e059:1;
+Received: (qmail 23762 invoked by uid 107); 31 Aug 2014 11:47:40 -0000
+X-Virus-Scanned: ClamAV
+Received: from mail-la0-f48.google.com (HELO mail-la0-f48.google.com) (209.85.215.48) (TLS, DHE-RSA-AES256-SHA cipher) (authenticated)
+  by smtp4.epfl.ch (AngelmatoPhylax SMTP proxy) with ESMTPSA; Sun, 31 Aug 2014 13:47:40 +0200
+Received: by mail-la0-f48.google.com with SMTP id gl10so4812639lab.35
+        for <scala-user@googlegroups.com>; Sun, 31 Aug 2014 04:47:38 -0700 (PDT)
+MIME-Version: 1.0
+X-Received: by 10.112.157.132 with SMTP id wm4mr1766483lbb.89.1409485658784;
+ Sun, 31 Aug 2014 04:47:38 -0700 (PDT)
+Received: by 10.25.163.207 with HTTP; Sun, 31 Aug 2014 04:47:38 -0700 (PDT)
+In-Reply-To: <e4a4ea34-3bdc-485d-9f40-46acefc38402@googlegroups.com>
+References: <e4a4ea34-3bdc-485d-9f40-46acefc38402@googlegroups.com>
+Date: Sun, 31 Aug 2014 13:47:38 +0200
+Message-ID: <CAA2kKAuE6637WsSEojXrQiYSQw=66ZPtFWT3vd63q5rod=eEWA@mail.gmail.com>
+Subject: Re: [scala-user] AST unquoting using quasiquotes and tree returned
+ from reify
+From: Eugene Burmako <eugene.burmako@epfl.ch>
+To: Yijie Shen <henry.yijieshen@gmail.com>
+Cc: scala-user <scala-user@googlegroups.com>
+X-Original-Sender: eugene.burmako@epfl.ch
+X-Original-Authentication-Results: gmr-mx.google.com;       spf=softfail
+ (google.com: domain of transitioning eugene.burmako@epfl.ch does not
+ designate 2001:620:618:1e0:1:80b2:e059:1 as permitted sender) smtp.mail=eugene.burmako@epfl.ch
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; boundary=001a11c24356020ad40501eb743e
+
+--001a11c24356020ad40501eb743e
+Content-Type: text/plain; charset=UTF-8
+
+Hi! Let's continue the discussion at SO:
+http://stackoverflow.com/questions/25569776/ast-unquoting-using-quasiquotes-and-tree-returned-from-reify
+.
+
+
+On 31 August 2014 04:19, Yijie Shen <henry.yijieshen@gmail.com> wrote:
+
+> I was trying to use Toolbox and quasiquote together to do code generation
+> tasks, and faced with StackOverflowError while using AST of object returned
+> from `reify(x).tree`, my code is as follows:
+>
+>     abstract class A[T] {def i: T}
+>     class B(val i: Int) extends A[Int]
+>     object A {
+>
+>         import scala.reflect.runtime.universe._
+>         import scala.reflect.runtime.{universe => ru}
+>         import scala.tools.reflect.ToolBox
+>
+>         val javaSeparator = "$"
+>         val curId = new java.util.concurrent.atomic.AtomicInteger()
+>
+>         protected def freshName(prefix: String): TermName = {
+>             newTermName(s"$prefix$javaSeparator${curId.getAndIncrement}")
+>      }
+>
+>      def main(args: Array[String]) {
+>         val b = new B(2)
+>         calculate(b)
+>      }
+>
+>      def calculate(a: A[_]): Unit = {
+>
+>         val toolBox = runtimeMirror(getClass.getClassLoader).mkToolBox()
+>         val i = freshName("i")
+>         val aTree = reify(a).tree
+>
+>         val tree = q"""
+>            val $i = $aTree.i
+>           println($i)
+>        """
+>
+>        toolBox.eval(tree)
+>       }
+>     }
+>
+> when I remove type parameter of class A or use `def calculate(a: B)`, the
+> `toolBox.eval` success and work as expected, i.e. print 2 in console.
+>
+> I don't quite understand why this happens, can someone explain why class
+> definition with type parameters fails the evaluation?
+>
+> --
+> You received this message because you are subscribed to the Google Groups
+> "scala-user" group.
+> To unsubscribe from this group and stop receiving emails from it, send an
+> email to scala-user+unsubscribe@googlegroups.com.
+> For more options, visit https://groups.google.com/d/optout.
+>
+
+-- 
+You received this message because you are subscribed to the Google Groups "scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+--001a11c24356020ad40501eb743e
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hi! Let&#39;s continue the discussion at SO:=C2=A0<a href=
+=3D"http://stackoverflow.com/questions/25569776/ast-unquoting-using-quasiqu=
+otes-and-tree-returned-from-reify">http://stackoverflow.com/questions/25569=
+776/ast-unquoting-using-quasiquotes-and-tree-returned-from-reify</a>.</div>
+<div class=3D"gmail_extra"><br><br><div class=3D"gmail_quote">On 31 August =
+2014 04:19, Yijie Shen <span dir=3D"ltr">&lt;<a href=3D"mailto:henry.yijies=
+hen@gmail.com" target=3D"_blank">henry.yijieshen@gmail.com</a>&gt;</span> w=
+rote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">I was trying to use Toolbox and quasiquote t=
+ogether to do code generation tasks, and faced with StackOverflowError whil=
+e using AST of object returned from `reify(x).tree`, my code is as follows:=
+<br>
+
+<br>
+=C2=A0 =C2=A0 abstract class A[T] {def i: T}<br>
+=C2=A0 =C2=A0 class B(val i: Int) extends A[Int]<br>
+=C2=A0 =C2=A0 object A {<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 import scala.reflect.runtime.universe._<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 import scala.reflect.runtime.{universe =3D&gt; =
+ru}<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 import scala.tools.reflect.ToolBox<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 val javaSeparator =3D &quot;$&quot;<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 val curId =3D new java.util.concurrent.atomic.A=
+tomicInteger()<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 protected def freshName(prefix: String): TermNa=
+me =3D {<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 newTermName(s&quot;$prefix$javaSe=
+parator${curId.getAndIncrement}&quot;)<br>
+=C2=A0 =C2=A0 =C2=A0}<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0def main(args: Array[String]) {<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 val b =3D new B(2)<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 calculate(b)<br>
+=C2=A0 =C2=A0 =C2=A0}<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0def calculate(a: A[_]): Unit =3D {<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 val toolBox =3D runtimeMirror(getClass.getClass=
+Loader).mkToolBox()<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 val i =3D freshName(&quot;i&quot;)<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 val aTree =3D reify(a).tree<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 val tree =3D q&quot;&quot;&quot;<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0val $i =3D $aTree.i<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 println($i)<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0&quot;&quot;&quot;<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0toolBox.eval(tree)<br>
+=C2=A0 =C2=A0 =C2=A0 }<br>
+=C2=A0 =C2=A0 }<br>
+<br>
+when I remove type parameter of class A or use `def calculate(a: B)`, the `=
+toolBox.eval` success and work as expected, i.e. print 2 in console.<br>
+<br>
+I don&#39;t quite understand why this happens, can someone explain why clas=
+s definition with type parameters fails the evaluation?<br>
+<span class=3D"HOEnZb"><font color=3D"#888888"><br>
+--<br>
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user%2Bunsubscribe@googlegroups.com">scala-=
+user+unsubscribe@googlegroups.com</a>.<br>
+For more options, visit <a href=3D"https://groups.google.com/d/optout" targ=
+et=3D"_blank">https://groups.google.com/d/optout</a>.<br>
+</font></span></blockquote></div><br></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+--001a11c24356020ad40501eb743e--

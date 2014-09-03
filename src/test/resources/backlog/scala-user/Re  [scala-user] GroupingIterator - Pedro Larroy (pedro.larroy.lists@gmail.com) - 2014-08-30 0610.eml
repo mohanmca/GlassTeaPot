@@ -1,0 +1,392 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp249458lfe;
+        Fri, 29 Aug 2014 15:10:13 -0700 (PDT)
+Return-Path: <scala-user+bncBC4OPUFY7YARBQPUQOQAKGQEF5ZWYUA@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBC4OPUFY7YARBQPUQOQAKGQEF5ZWYUA@googlegroups.com designates 10.180.38.42 as permitted sender) client-ip=10.180.38.42
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBC4OPUFY7YARBQPUQOQAKGQEF5ZWYUA@googlegroups.com designates 10.180.38.42 as permitted sender) smtp.mail=scala-user+bncBC4OPUFY7YARBQPUQOQAKGQEF5ZWYUA@googlegroups.com;
+       dkim=pass header.i=@googlegroups.com
+X-Received: from mr.google.com ([10.180.38.42])
+        by 10.180.38.42 with SMTP id d10mr302378wik.15.1409350213059 (num_hops = 1);
+        Fri, 29 Aug 2014 15:10:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive:sender
+         :list-subscribe:list-unsubscribe:content-type;
+        bh=v816etEZucI7OfLCl5GItPdNDXQN5yP7qmsd7Yx/+Jw=;
+        b=awNJlBwgII1FkgHhGaIWaFGSVLefss5hm1OKQYAY8JKScu6XQCMe4yZ0wn9T0qJO0N
+         OXG7hmSnrPTV2NLPByJnbj43GzFGyH/02I8GvFBzRsNcSt+TNNhzL00MvFlbBsp4G8U/
+         6BnmXSEwLu8s1HB0FoaZFJ5hb+qxVCUpXkR1Zh1rwSHCYpYVBVR25S8AnspFW7tByrnp
+         Xkihhjz45dtewZEUxVcu9k+NoxvFeyFx4vMMsooHsoEx1g2xNilGE9YPBSy/coOdJFYX
+         KDnLG1EXemqeKqMGv+SB2DHGCo50yjX+cYdAKCbyHaJJdm2V2jyKQgDgjPuRFcmbVA1g
+         FmLg==
+X-Received: by 10.180.38.42 with SMTP id d10mr29571wik.15.1409350212932;
+        Fri, 29 Aug 2014 15:10:12 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.180.103.97 with SMTP id fv1ls146940wib.45.canary; Fri, 29 Aug
+ 2014 15:10:09 -0700 (PDT)
+X-Received: by 10.180.36.98 with SMTP id p2mr1316244wij.0.1409350209014;
+        Fri, 29 Aug 2014 15:10:09 -0700 (PDT)
+Received: from mail-la0-x244.google.com (mail-la0-x244.google.com [2a00:1450:4010:c03::244])
+        by gmr-mx.google.com with ESMTPS id b6si251442lbd.1.2014.08.29.15.10.08
+        for <scala-user@googlegroups.com>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Fri, 29 Aug 2014 15:10:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pedro.larroy.lists@gmail.com designates 2a00:1450:4010:c03::244 as permitted sender) client-ip=2a00:1450:4010:c03::244;
+Received: by mail-la0-f68.google.com with SMTP id mc6so1195055lab.7
+        for <scala-user@googlegroups.com>; Fri, 29 Aug 2014 15:10:08 -0700 (PDT)
+MIME-Version: 1.0
+X-Received: by 10.112.169.35 with SMTP id ab3mr12938202lbc.41.1409350208853;
+ Fri, 29 Aug 2014 15:10:08 -0700 (PDT)
+Received: by 10.112.213.5 with HTTP; Fri, 29 Aug 2014 15:10:08 -0700 (PDT)
+In-Reply-To: <CAPaMnL4QSwP42cnQATGVVXcO-WBWbj_Eut=HwEZ2Xgm+624zOw@mail.gmail.com>
+References: <49637b93-b350-447f-bc41-1c8b11b033d7@googlegroups.com>
+	<CAA_Y42wAi7=R5aFrEPb=yKF8BuxcgZg66EJUMA1qxGt+e8dHjg@mail.gmail.com>
+	<CAPaMnL4QSwP42cnQATGVVXcO-WBWbj_Eut=HwEZ2Xgm+624zOw@mail.gmail.com>
+Date: Sat, 30 Aug 2014 00:10:08 +0200
+Message-ID: <CAC_CU1hFV7Ypswx8ecP3haE4v=3YOqeSUuZoEAfWJefbr2QXoA@mail.gmail.com>
+Subject: Re: [scala-user] GroupingIterator
+From: Pedro Larroy <pedro.larroy.lists@gmail.com>
+To: Som Snytt <som.snytt@gmail.com>
+Cc: atomly <atomly@gmail.com>, scala-user <scala-user@googlegroups.com>
+X-Original-Sender: pedro.larroy.lists@gmail.com
+X-Original-Authentication-Results: gmr-mx.google.com;       spf=pass
+ (google.com: domain of pedro.larroy.lists@gmail.com designates
+ 2a00:1450:4010:c03::244 as permitted sender) smtp.mail=pedro.larroy.lists@gmail.com;
+       dkim=pass header.i=@gmail.com;       dmarc=pass (p=NONE dis=NONE) header.from=gmail.com
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; boundary=001a11c2696a901a450501cbea97
+
+--001a11c2696a901a450501cbea97
+Content-Type: text/plain; charset=UTF-8
+
+Som: exactly, we have found this idea quite useful, to group items
+according to a predicate that refers to the items being grouped. Would
+there be interest in adding it to the library?
+
+
+On Fri, Aug 29, 2014 at 10:44 PM, Som Snytt <som.snytt@gmail.com> wrote:
+
+> Iterator.GroupedIterator bills itself as "flexible," but not this flexible.
+>
+> scala> (1 to 10).toIterator slideBy ((i: Int, is: Seq[Int]) => is.sum + i
+> <= 10)
+> res6: Iterator[IndexedSeq[Int]] = non-empty iterator
+>
+> scala> res6.mkString(",")
+> res7: String = Vector(1, 2, 3,
+> 4),Vector(5),Vector(6),Vector(7),Vector(8),Vector(9),Vector(10)
+>
+> It just needs an optional stepping predicate.
+>
+>
+> On Fri, Aug 29, 2014 at 9:43 AM, atomly <atomly@gmail.com> wrote:
+>
+>> I'm a little confused... This functionality wouldn't be satisfied by
+>> Iterable.groupBy or Iterable.partition?
+>>
+>> Are you saying there are potentially more than two groups and it would
+>> start a new group each time it returned false?
+>>
+>> :: atomly ::
+>>
+>> [ atomly@atomly.com : www.atomly.com  : http://blog.atomly.com/ ...
+>> [ atomiq records : new york city : +1.347.692.8661 ...
+>> [ e-mail atomly-news-subscribe@atomly.com for atomly info and updates ...
+>>
+>>
+>> On Thu, Aug 28, 2014 at 12:05 PM, Pedro Larroy <
+>> pedro.larroy.lists@gmail.com> wrote:
+>>
+>>> Hi
+>>>
+>>> would it be interesting to include a grouping iterator given a predicate
+>>> and previous elements to get an iterable of seq given an iterator?
+>>>
+>>>
+>>> The code would be something like the following one.
+>>>
+>>>
+>>> Regards.
+>>>
+>>> Pedro.
+>>>
+>>>
+>>>
+>>>     import scala.collection.mutable.ArrayBuffer
+>>>
+>>>     object GroupingIterator {
+>>>
+>>>       /**
+>>>        * Create a new GroupingIterator with a grouping predicate.
+>>>        *
+>>>        * @param it The original iterator
+>>>        * @param p Predicate controlling the grouping
+>>>        * @tparam A Type of elements iterated
+>>>        * @return A new GroupingIterator
+>>>        */
+>>>       def apply[A](it: Iterator[A])(p: (A, IndexedSeq[A]) => Boolean):
+>>> GroupingIterator[A] =
+>>>         new GroupingIterator(it)(p)
+>>>     }
+>>>
+>>>     /**
+>>>      * Group elements in sequences of contiguous elements that satisfy a
+>>> predicate. The predicate
+>>>      * tests each single potential next element of the group with the
+>>> help of the elements grouped so far.
+>>>      * If it returns true, the potential next element is added to the
+>>> group, otherwise
+>>>      * a new group is started with the potential next element as first
+>>> element
+>>>      *
+>>>      * @param self The original iterator
+>>>      * @param p Predicate controlling the grouping
+>>>      * @tparam A Type of elements iterated
+>>>      */
+>>>     class GroupingIterator[+A](self: Iterator[A])(p: (A, IndexedSeq[A])
+>>> => Boolean) extends Iterator[IndexedSeq[A]] {
+>>>
+>>>       private[this] val source = self.buffered
+>>>       private[this] val buffer: ArrayBuffer[A] = ArrayBuffer()
+>>>
+>>>       def hasNext: Boolean = source.hasNext
+>>>
+>>>       def next(): IndexedSeq[A] = {
+>>>         if (hasNext)
+>>>           nextGroup()
+>>>         else
+>>>           Iterator.empty.next()
+>>>       }
+>>>
+>>>       private[this] def nextGroup(): IndexedSeq[A] = {
+>>>         assert(source.hasNext)
+>>>
+>>>         buffer.clear()
+>>>         buffer += source.next
+>>>
+>>>         while (source.hasNext && p(source.head, buffer)) {
+>>>           buffer += source.next
+>>>         }
+>>>
+>>>         buffer.toIndexedSeq
+>>>       }
+>>>     }
+>>>
+>>> --
+>>> You received this message because you are subscribed to the Google
+>>> Groups "scala-user" group.
+>>> To unsubscribe from this group and stop receiving emails from it, send
+>>> an email to scala-user+unsubscribe@googlegroups.com.
+>>> For more options, visit https://groups.google.com/d/optout.
+>>>
+>>
+>>  --
+>> You received this message because you are subscribed to the Google Groups
+>> "scala-user" group.
+>> To unsubscribe from this group and stop receiving emails from it, send an
+>> email to scala-user+unsubscribe@googlegroups.com.
+>> For more options, visit https://groups.google.com/d/optout.
+>>
+>
+>
+
+-- 
+You received this message because you are subscribed to the Google Groups "scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+--001a11c2696a901a450501cbea97
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Som: exactly, we have found this idea quite useful, to gro=
+up items according to a predicate that refers to the items being grouped. W=
+ould there be interest in adding it to the library?</div><div class=3D"gmai=
+l_extra">
+<br><br><div class=3D"gmail_quote">On Fri, Aug 29, 2014 at 10:44 PM, Som Sn=
+ytt <span dir=3D"ltr">&lt;<a href=3D"mailto:som.snytt@gmail.com" target=3D"=
+_blank">som.snytt@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D"g=
+mail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-l=
+eft:1ex">
+<div dir=3D"ltr"><div><div><div>Iterator.GroupedIterator bills itself as &q=
+uot;flexible,&quot; but not this flexible.<br><br></div><span style=3D"font=
+-family:courier new,monospace">scala&gt; (1 to 10).toIterator slideBy ((i: =
+Int, is: Seq[Int]) =3D&gt; is.sum + i &lt;=3D 10) <br>
+
+res6: Iterator[IndexedSeq[Int]] =3D non-empty iterator<br><br>scala&gt; res=
+6.mkString(&quot;,&quot;)<br>res7: String =3D Vector(1, 2, 3, 4),Vector(5),=
+Vector(6),Vector(7),Vector(8),Vector(9),Vector(10)</span><br><br></div></di=
+v>
+
+<div>It just needs an optional stepping predicate.<br></div></div><div clas=
+s=3D"HOEnZb"><div class=3D"h5"><div class=3D"gmail_extra"><br><br><div clas=
+s=3D"gmail_quote">On Fri, Aug 29, 2014 at 9:43 AM, atomly <span dir=3D"ltr"=
+>&lt;<a href=3D"mailto:atomly@gmail.com" target=3D"_blank">atomly@gmail.com=
+</a>&gt;</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex"><div dir=3D"ltr">I&#39;m a little confused..=
+. This functionality wouldn&#39;t be satisfied by Iterable.groupBy or Itera=
+ble.partition?<div>
+
+<br></div><div>Are you saying there are potentially more than two groups an=
+d it would start a new group each time it returned false?</div>
+
+</div><div class=3D"gmail_extra"><br clear=3D"all"><div>:: atomly ::<br><br=
+>[ <a href=3D"mailto:atomly@atomly.com" target=3D"_blank">atomly@atomly.com=
+</a> : <a href=3D"http://www.atomly.com" target=3D"_blank">www.atomly.com</=
+a>=C2=A0 : <a href=3D"http://blog.atomly.com/" target=3D"_blank">http://blo=
+g.atomly.com/</a> ...<br>
+
+
+
+[ atomiq records : new york city : <a href=3D"tel:%2B1.347.692.8661" value=
+=3D"+13476928661" target=3D"_blank">+1.347.692.8661</a> ...<br>[ e-mail <a =
+href=3D"mailto:atomly-news-subscribe@atomly.com" target=3D"_blank">atomly-n=
+ews-subscribe@atomly.com</a> for atomly info and updates ...</div>
+
+<div><div>
+<br><br><div class=3D"gmail_quote">On Thu, Aug 28, 2014 at 12:05 PM, Pedro =
+Larroy <span dir=3D"ltr">&lt;<a href=3D"mailto:pedro.larroy.lists@gmail.com=
+" target=3D"_blank">pedro.larroy.lists@gmail.com</a>&gt;</span> wrote:<br><=
+blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px=
+ #ccc solid;padding-left:1ex">
+
+
+
+<div dir=3D"ltr">Hi<div><br></div><div>would it be interesting to include a=
+ grouping iterator given a predicate and previous elements to get an iterab=
+le of seq given an iterator?</div><div><br></div><div><br></div><div>The co=
+de would be something like the following one.</div>
+
+
+
+<div><br></div><div><br>Regards.</div><div><br></div><div>Pedro.</div><div>=
+<br></div><div><br></div><div><br></div><div><div>=C2=A0 =C2=A0 import scal=
+a.collection.mutable.ArrayBuffer</div><div>=C2=A0 =C2=A0=C2=A0</div><div>=
+=C2=A0 =C2=A0 object GroupingIterator {</div>
+
+
+
+<div>=C2=A0 =C2=A0=C2=A0</div><div>=C2=A0 =C2=A0 =C2=A0 /**</div><div>=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0* Create a new GroupingIterator with a grouping pre=
+dicate.</div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0*</div><div>=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0* @param it The original iterator</div><div>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0* @param p Predicate controlling the grouping</div>
+
+
+
+<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0* @tparam A Type of elements iterated</div>=
+<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0* @return A new GroupingIterator</div><div>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0*/</div><div>=C2=A0 =C2=A0 =C2=A0 def apply[A](i=
+t: Iterator[A])(p: (A, IndexedSeq[A]) =3D&gt; Boolean): GroupingIterator[A]=
+ =3D</div>
+
+
+
+<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 new GroupingIterator(it)(p)</div><div>=C2=
+=A0 =C2=A0 }</div><div>=C2=A0 =C2=A0=C2=A0</div><div>=C2=A0 =C2=A0 /**</div=
+><div>=C2=A0 =C2=A0 =C2=A0* Group elements in sequences of contiguous eleme=
+nts that satisfy a predicate. The predicate</div><div>=C2=A0 =C2=A0 =C2=A0*=
+ tests each single potential next element of the group with the help of the=
+ elements grouped so far.</div>
+
+
+
+<div>=C2=A0 =C2=A0 =C2=A0* If it returns true, the potential next element i=
+s added to the group, otherwise</div><div>=C2=A0 =C2=A0 =C2=A0* a new group=
+ is started with the potential next element as first element</div><div>=C2=
+=A0 =C2=A0 =C2=A0*</div><div>=C2=A0 =C2=A0 =C2=A0* @param self The original=
+ iterator</div>
+
+
+
+<div>=C2=A0 =C2=A0 =C2=A0* @param p Predicate controlling the grouping</div=
+><div>=C2=A0 =C2=A0 =C2=A0* @tparam A Type of elements iterated</div><div>=
+=C2=A0 =C2=A0 =C2=A0*/</div><div>=C2=A0 =C2=A0 class GroupingIterator[+A](s=
+elf: Iterator[A])(p: (A, IndexedSeq[A]) =3D&gt; Boolean) extends Iterator[I=
+ndexedSeq[A]] {</div>
+
+
+
+<div>=C2=A0 =C2=A0=C2=A0</div><div>=C2=A0 =C2=A0 =C2=A0 private[this] val s=
+ource =3D self.buffered</div><div>=C2=A0 =C2=A0 =C2=A0 private[this] val bu=
+ffer: ArrayBuffer[A] =3D ArrayBuffer()</div><div>=C2=A0 =C2=A0=C2=A0</div><=
+div>=C2=A0 =C2=A0 =C2=A0 def hasNext: Boolean =3D source.hasNext</div><div>=
+=C2=A0 =C2=A0=C2=A0</div>
+
+
+
+<div>=C2=A0 =C2=A0 =C2=A0 def next(): IndexedSeq[A] =3D {</div><div>=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 if (hasNext)</div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 nextGroup()</div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 else</div><div>=C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 Iterator.empty.next()</div><div>=C2=A0 =C2=A0 =
+=C2=A0 }</div><div>=C2=A0 =C2=A0=C2=A0</div><div>=C2=A0 =C2=A0 =C2=A0 priva=
+te[this] def nextGroup(): IndexedSeq[A] =3D {</div>
+
+
+
+<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 assert(source.hasNext)</div><div>=C2=A0 =
+=C2=A0=C2=A0</div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 buffer.clear()</div><div=
+>=C2=A0 =C2=A0 =C2=A0 =C2=A0 buffer +=3D source.next</div><div>=C2=A0 =C2=
+=A0=C2=A0</div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 while (source.hasNext &amp;=
+&amp; p(source.head, buffer)) {</div>
+
+
+
+<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 buffer +=3D source.next</div><div>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</div><div>=C2=A0 =C2=A0=C2=A0</div><div>=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 buffer.toIndexedSeq</div><div>=C2=A0 =C2=A0 =C2=A0=
+ }</div><div>=C2=A0 =C2=A0 }</div></div></div><span><font color=3D"#888888"=
+>
+
+<p></p>
+
+-- <br>
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com" target=
+=3D"_blank">scala-user+unsubscribe@googlegroups.com</a>.<br>
+For more options, visit <a href=3D"https://groups.google.com/d/optout" targ=
+et=3D"_blank">https://groups.google.com/d/optout</a>.<br>
+</font></span></blockquote></div><br></div></div></div><div><div>
+
+<p></p>
+
+-- <br>
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com" target=
+=3D"_blank">scala-user+unsubscribe@googlegroups.com</a>.<br>
+For more options, visit <a href=3D"https://groups.google.com/d/optout" targ=
+et=3D"_blank">https://groups.google.com/d/optout</a>.<br>
+</div></div></blockquote></div><br></div>
+</div></div></blockquote></div><br></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+--001a11c2696a901a450501cbea97--

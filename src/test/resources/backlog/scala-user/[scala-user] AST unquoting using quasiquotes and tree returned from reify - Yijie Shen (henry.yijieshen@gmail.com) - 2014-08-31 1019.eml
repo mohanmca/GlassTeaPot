@@ -1,0 +1,107 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp369299lfe;
+        Sat, 30 Aug 2014 19:19:56 -0700 (PDT)
+Return-Path: <scala-user+bncBC2K3M5554CBBSEMRKQAKGQEDBDWZFA@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBC2K3M5554CBBSEMRKQAKGQEDBDWZFA@googlegroups.com designates 10.50.154.66 as permitted sender) client-ip=10.50.154.66
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBC2K3M5554CBBSEMRKQAKGQEDBDWZFA@googlegroups.com designates 10.50.154.66 as permitted sender) smtp.mail=scala-user+bncBC2K3M5554CBBSEMRKQAKGQEDBDWZFA@googlegroups.com;
+       dkim=pass header.i=@gmail.com
+X-Received: from mr.google.com ([10.50.154.66])
+        by 10.50.154.66 with SMTP id vm2mr1529705igb.5.1409451596025 (num_hops = 1);
+        Sat, 30 Aug 2014 19:19:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=date:from:to:message-id:subject:mime-version:x-original-sender
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :sender:list-subscribe:list-unsubscribe:content-type;
+        bh=/QqdflfeadEWz2ARp+tIY9n3I9Mhake0N05bT/04Fzw=;
+        b=oN/9bHulKNkKppiIyMBXZknhcjwhaEjLRM5GpYVDCGBXA8a6bNKePJUl9744JhQOcT
+         2Sr2Qe3gHxzEHyv4P/TRlW/Aa3ZVkgSUAhThGZOw1Q1UKgcu3mv36mXnvRQZncoGGuxb
+         LGXX6sANqCutA8lY9IrrB7vygLI85r9y77klpD/mx1+QmKZeTEpkD9Wz9xw3orWTVhcb
+         jmh/CihizH3nUGs/B+iK5orHmc5I5YLvM6come6B0NHHQb6oCaxCS0iB9u7YxBWGwzdx
+         v8Aox4MgpU8IqsUbfKZtDdMpntbFBSf0Kh1dt0YNiZccnCp+p8x4nIaNThL/LnM0O5qS
+         hGBw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:x-original-sender
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :sender:list-subscribe:list-unsubscribe:content-type;
+        bh=/QqdflfeadEWz2ARp+tIY9n3I9Mhake0N05bT/04Fzw=;
+        b=V8M4HAMh5/n7iZaDurJlwIFAWL6208qZJeisyi7uiq/r/oZkZTSc4RaGfRdcZAWp37
+         /zjxzZmh4KcbkGKPQQn+Xq0kJh6ncWpRnR7vyZYl0Ft11u0oUeDuIPP62bxQCusQBJ8/
+         wCpK35z4C154BUyejS9UIcg4ZP7clvLrAy422lWvsBsORPdYVV/5+xb6zV/1M9iMM7iz
+         GY5fuWgub+UgYtjYrlzWmOoyJjX0Sthfda34mVqAt7exoh2TCqEFNlYgxek7OuQWsBq7
+         IMTDHyanOhEis97Uh5tMc7p+12XO/jI6IE+Qfw/wJjtFM0T4F45aTcGXbkLXgpBWh6R4
+         Xq0Q==
+X-Received: by 10.50.154.66 with SMTP id vm2mr229431igb.5.1409451595559;
+        Sat, 30 Aug 2014 19:19:55 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.50.253.164 with SMTP id ab4ls1157474igd.43.canary; Sat, 30 Aug
+ 2014 19:19:52 -0700 (PDT)
+X-Received: by 10.50.57.71 with SMTP id g7mr227886igq.13.1409451592266;
+        Sat, 30 Aug 2014 19:19:52 -0700 (PDT)
+Date: Sat, 30 Aug 2014 19:19:51 -0700 (PDT)
+From: Yijie Shen <henry.yijieshen@gmail.com>
+To: scala-user@googlegroups.com
+Message-Id: <e4a4ea34-3bdc-485d-9f40-46acefc38402@googlegroups.com>
+Subject: [scala-user] AST unquoting using quasiquotes and tree returned from reify
+MIME-Version: 1.0
+X-Original-Sender: Henry.YijieShen@gmail.com
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: text/plain; charset=UTF-8
+
+I was trying to use Toolbox and quasiquote together to do code generation tasks, and faced with StackOverflowError while using AST of object returned from `reify(x).tree`, my code is as follows:
+
+    abstract class A[T] {def i: T}
+    class B(val i: Int) extends A[Int]
+    object A {
+
+        import scala.reflect.runtime.universe._
+        import scala.reflect.runtime.{universe => ru}
+        import scala.tools.reflect.ToolBox
+
+        val javaSeparator = "$"
+        val curId = new java.util.concurrent.atomic.AtomicInteger()
+
+        protected def freshName(prefix: String): TermName = {
+            newTermName(s"$prefix$javaSeparator${curId.getAndIncrement}")
+     }
+
+     def main(args: Array[String]) {
+        val b = new B(2)
+        calculate(b)
+     }
+
+     def calculate(a: A[_]): Unit = {
+
+        val toolBox = runtimeMirror(getClass.getClassLoader).mkToolBox()
+        val i = freshName("i")
+        val aTree = reify(a).tree
+
+        val tree = q"""
+           val $i = $aTree.i
+          println($i)
+       """
+
+       toolBox.eval(tree)
+      }
+    }
+
+when I remove type parameter of class A or use `def calculate(a: B)`, the `toolBox.eval` success and work as expected, i.e. print 2 in console.
+
+I don't quite understand why this happens, can someone explain why class definition with type parameters fails the evaluation?
+
+-- 
+You received this message because you are subscribed to the Google Groups "scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.

@@ -1,0 +1,174 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp501391lfe;
+        Mon, 1 Sep 2014 00:39:37 -0700 (PDT)
+Return-Path: <scala-user+bncBCGONGOVQQDRBNWFSCQAKGQES4Z3E4I@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBCGONGOVQQDRBNWFSCQAKGQES4Z3E4I@googlegroups.com designates 10.140.89.232 as permitted sender) client-ip=10.140.89.232
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBCGONGOVQQDRBNWFSCQAKGQES4Z3E4I@googlegroups.com designates 10.140.89.232 as permitted sender) smtp.mail=scala-user+bncBCGONGOVQQDRBNWFSCQAKGQES4Z3E4I@googlegroups.com;
+       dkim=pass header.i=@gmail.com
+X-Received: from mr.google.com ([10.140.89.232])
+        by 10.140.89.232 with SMTP id v95mr3763qgd.34.1409557177460 (num_hops = 1);
+        Mon, 01 Sep 2014 00:39:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version
+         :x-original-sender:precedence:mailing-list:list-id:list-post
+         :list-help:list-archive:sender:list-subscribe:list-unsubscribe
+         :content-type;
+        bh=uRFewZ74fhnmRUK2KUYzHwjUBo6wJhaAXtZu8+M2mBk=;
+        b=cDl42witWWIT72Q2F7EjEyT2oVGITwJFR+0bHnIu1JLpTEBj1dT6OXV7kLJF+fGr3I
+         VCmXbwcgf3KZH5CBOABtm2f1BLU8mxUwg7F96U2xXo6V/uPFsoKKHTbqKlMCjR1E9Guw
+         pM4+km2/8IrYtp0ip1YI/NYM1f+kPpDdI/sVKcuiwzMPA/hNz4jSzf7AQ3FudaOTEnv8
+         iSDmyvrjBca+dnlDWztLnoj2YioI69AzaTPYJQoN7VpUL7z7u8lvRT0V5wVHGQb/xSYW
+         x1OiaH0O3xtnt3oYM7IA/bBWglZDl6yNNSjtJH4HCbmimivlU73hiXZ2tp9U2L+u6WrE
+         GjTQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version
+         :x-original-sender:precedence:mailing-list:list-id:list-post
+         :list-help:list-archive:sender:list-subscribe:list-unsubscribe
+         :content-type;
+        bh=uRFewZ74fhnmRUK2KUYzHwjUBo6wJhaAXtZu8+M2mBk=;
+        b=lpWyoSbdA3jv32n4fEjopx8IldC9T/7qE0KvcPDpmgeohkvfL6rftD0cy2T6yTqYTr
+         wc0xemFUysjStGJVpoX+5O5qKrQlkttFf0r/hVzNAq/TuHYGoPIPuDKBiY7zWUk1RzVN
+         Ur9af5k5OpKr+vZq9FVo4a2coTuTCU/paUMMzVmpTrtRPeOXJlJC2pZY1IPSGjwdt3JQ
+         YOjxZ4qqZRr+x8dc/iKIDbF2SVQQJZHvou1C5nbntW55ZljPm6v5zOG2ahDwXufIEvBi
+         7Ydo5SqglBwLlfWKo5wPuVtaNgxmsheW0YxGPsVaJ03HaBFr4n3PeCwjZ7muacbDD8QY
+         Vh6Q==
+X-Received: by 10.140.89.232 with SMTP id v95mr519qgd.34.1409557176944;
+        Mon, 01 Sep 2014 00:39:36 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.140.88.203 with SMTP id t69ls1885619qgd.30.gmail; Mon, 01 Sep
+ 2014 00:39:34 -0700 (PDT)
+X-Received: by 10.140.31.202 with SMTP id f68mr550qgf.30.1409557174574;
+        Mon, 01 Sep 2014 00:39:34 -0700 (PDT)
+Date: Mon, 1 Sep 2014 00:39:34 -0700 (PDT)
+From: Jesper Nordenberg <jesper.nordenberg@gmail.com>
+To: scala-user@googlegroups.com
+Message-Id: <5d8c35e7-6ac2-41e3-a0dc-fd8cbf2afd1e@googlegroups.com>
+In-Reply-To: <2d22b6c7-afb0-4245-bed6-03ff641b208e@googlegroups.com>
+References: <2d22b6c7-afb0-4245-bed6-03ff641b208e@googlegroups.com>
+Subject: [scala-user] Re: scunits - experimental units of measure library
+MIME-Version: 1.0
+X-Original-Sender: jesper.nordenberg@gmail.com
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_924_1859526405.1409557174265"
+
+------=_Part_924_1859526405.1409557174265
+Content-Type: text/plain; charset=UTF-8
+
+Looks good. It seems like you're using type level integers to discriminate 
+the quantities which isn't very composable (two libraries might use the 
+same id for different things). This is a downside of using type level 
+computations, there really is no way to compare two types for equality. 
+Maybe it's possible to implement using type macros?
+
+/Jesper Nordenberg
+
+On Sunday, 31 August 2014 21:14:42 UTC+2, Grant Beaty wrote:
+>
+> I've been exploring type-level programming in scala and created an 
+> extensible library for units of measure. I'd be curious if anyone else 
+> finds it useful?
+>
+> https://github.com/gbeaty/scunits
+>
+> scunits uses type-level lists of dimensions, but they differ from 
+> shapeless' hlist types in that they are constructed entirely from recursive 
+> `type` statements without the use of implicits. I didn't know what 
+> implicits would do to run-time performance and wanted to keep everything 
+> lean and of course value-classed. I also rolled my own type-level integers; 
+> does anyone know if there's a small library for this anywhere? I don't want 
+> to import shapeless or spire just for integer support.
+>
+> It differs from other units libraries I've seen in that:
+>
+>    - All measurements are value classes.
+>    - Its extensible - new base quantities can be added by the user.
+>    - Type errors are uniquely unreadable.
+>    - Basic abstract algebra is possible, e.g. Measure[A] * (Measure[B] / 
+>    Measure[A]) can be implicitly converted to Measure[A].
+>    - Its small (so far...) and a good size for my Android projects.
+>    - All measurements are stored as SI values and converted to other 
+>    units when needed, reducing complexity.
+>
+> This is my first significant foray into type-level programming in scala, 
+> so comments and criticisms are welcome.
+>
+> /Grant
+>
+>>
+
+-- 
+You received this message because you are subscribed to the Google Groups "scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+------=_Part_924_1859526405.1409557174265
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Looks good. It seems like you're using type level integers=
+ to discriminate the quantities which isn't very composable (two libraries =
+might use the same id for different things). This is a downside of using ty=
+pe level computations, there really is no way to compare two types for equa=
+lity. Maybe it's possible to implement using type macros?<div><br></div><di=
+v>/Jesper Nordenberg<br><br>On Sunday, 31 August 2014 21:14:42 UTC+2, Grant=
+ Beaty  wrote:<blockquote class=3D"gmail_quote" style=3D"margin: 0;margin-l=
+eft: 0.8ex;border-left: 1px #ccc solid;padding-left: 1ex;"><div dir=3D"ltr"=
+>I've been exploring type-level programming in scala and created an extensi=
+ble library for units of measure. I'd be curious if anyone else finds it us=
+eful?<div><br></div><div><a href=3D"https://github.com/gbeaty/scunits" targ=
+et=3D"_blank" onmousedown=3D"this.href=3D'https://www.google.com/url?q\75ht=
+tps%3A%2F%2Fgithub.com%2Fgbeaty%2Fscunits\46sa\75D\46sntz\0751\46usg\75AFQj=
+CNFU318WC3c4jaoH1_rWTfdPdaglhA';return true;" onclick=3D"this.href=3D'https=
+://www.google.com/url?q\75https%3A%2F%2Fgithub.com%2Fgbeaty%2Fscunits\46sa\=
+75D\46sntz\0751\46usg\75AFQjCNFU318WC3c4jaoH1_rWTfdPdaglhA';return true;">h=
+ttps://github.com/gbeaty/<wbr>scunits</a></div><div><br></div><div>scunits =
+uses type-level lists of dimensions, but they differ from shapeless' hlist =
+types in that they are constructed entirely from recursive `type`&nbsp;stat=
+ements without the use of implicits. I didn't know what implicits would do =
+to run-time performance and wanted to keep everything lean and of course va=
+lue-classed. I also rolled my own type-level integers; does anyone know if =
+there's a small library for this anywhere? I don't want to import shapeless=
+ or spire just for integer support.</div><div><br></div><div>It differs fro=
+m other units libraries I've seen in that:</div><div><ul><li><span style=3D=
+"line-height:normal">All measurements are value classes.</span></li><li><sp=
+an style=3D"line-height:normal">Its extensible - new base quantities can be=
+ added by the user.</span></li><li><span style=3D"line-height:normal">Type =
+errors are uniquely unreadable.</span></li><li><span style=3D"line-height:n=
+ormal">Basic abstract algebra is possible, e.g. Measure[A] * (Measure[B] / =
+Measure[A]) can be implicitly converted to Measure[A].</span></li><li><span=
+ style=3D"line-height:normal">Its small (so far...) and a good size for my =
+Android projects.</span></li><li><span style=3D"line-height:normal">All mea=
+surements are stored as SI values and converted to other units when needed,=
+ reducing complexity.</span></li></ul>This is my first significant foray in=
+to type-level programming in scala, so comments and criticisms are welcome.=
+</div><div><br></div><div>/Grant<br></div><blockquote class=3D"gmail_quote"=
+ style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-color:=
+rgb(204,204,204);border-left-style:solid;padding-left:1ex"></blockquote></d=
+iv></blockquote></div></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+------=_Part_924_1859526405.1409557174265--
