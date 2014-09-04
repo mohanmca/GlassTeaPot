@@ -1,4 +1,4 @@
-package glassteapot.processing
+package com.glassteapot.processing
 
 import org.scalatest.FunSuite
 
