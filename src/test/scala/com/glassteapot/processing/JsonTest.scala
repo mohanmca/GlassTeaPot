@@ -6,7 +6,7 @@ import org.scalatest.MustMatchers
 import net.liftweb.json._
 import net.liftweb.json.JsonDSL._
 /**
- * Created by nbkpx5t on 9/4/14.
+ * Created by Arun Manivannan on 9/4/14.
  */
 
 case class Person(name:String, address:Address){
