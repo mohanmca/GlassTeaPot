@@ -17,9 +17,10 @@ libraryDependencies ++=Seq(
   "org.scalatest" %% "scalatest" % "2.2.1"// % "test"
 )
 
-libraryDependencies += "com.sun.mail" % "javax.mail" % "1.5.2"
-libraryDependencies += "javax.mail" % "javax.mail-api" % "1.5.2"
-libraryDependencies += "org.apache.james" % "apache-mime4j" % "0.7.2"
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.5.0" withSources()
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.5.0" withSources()
+libraryDependencies += "com.sun.mail" % "javax.mail" % "1.5.2" withSources()
+libraryDependencies += "javax.mail" % "javax.mail-api" % "1.5.2" withSources()
 libraryDependencies += 	"org.elasticsearch" % "elasticsearch" % "1.4.2" withSources()
 libraryDependencies += "org.apache.derby" % "derby" % "10.4.1.3" % "test"
 

@@ -1,0 +1,4 @@
+{
+	"name":"DKIM-Signature",
+	"value":"v=1; a=rsa-sha256; c=relaxed/relaxed;\r\n        d=googlegroups.com; s=20120806;\r\n        h=from:date:subject:to:message-id:mime-version:x-original-sender\r\n         :x-original-authentication-results:precedence:mailing-list:list-id\r\n         :list-post:list-help:list-archive:sender:list-subscribe\r\n         :list-unsubscribe:content-type;\r\n        bh=S93aUNffSQ02BGGp6kBp9+O4oSk6KHLXs9FeZxqJsGE=;\r\n        b=sX68H3LW7I7r6cSd1R/nNx6/fsCYzp0rUMkRay6hAb8SSnZTv+1+0Fdja7F+b/4sqM\r\n         hXsuqwFtmcB/2ImrJOX/eL4Pc2cLFRbNu8ULHoj+i4hF2Yx3KZhmqyDwhvnXDdo4anPC\r\n         FJWVc3VYwlNtHG5k4iaEKsGpfpt9sYeX+fL29OoIZ2rA6b0k24o6hKy319JfR/0Ivu9s\r\n         nF82W5cMaR3RJWgfcU5jnHhs1D2myXvzuVHGSn1k1K8/zQq2lsm15ejc9s+aOT3JmGRK\r\n         XMlvweEAqdb0Z+H4NvledosehUZiH8xPpCjmsQtZ/rynwpiyj6NfYq26vRcnz+aHFSd3\r\n         ZmOg=="
+}
