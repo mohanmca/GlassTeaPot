@@ -1,0 +1,57 @@
+{
+  "Authentication-Results" : "mr.google.com;\r\n       spf=pass (google.com: domain of scala-user+bncBC45NRWPXEIRBE42SOQAKGQEEVYZYMA@googlegroups.com designates 10.152.7.226 as permitted sender) smtp.mail=scala-user+bncBC45NRWPXEIRBE42SOQAKGQEEVYZYMA@googlegroups.com;\r\n       dkim=pass header.i=@googlegroups.com",
+  "Content" : "Content",
+  "Content-Type" : "multipart/alternative; boundary=\"Apple-Mail=_5B04E8C4-0D0A-4CAA-931B-781EE703889A\"",
+  "DKIM-Signature" : "v=1; a=rsa-sha256; c=relaxed/relaxed;\r\n        d=googlegroups.com; s=20120806;\r\n        h=from:date:subject:to:message-id:mime-version:x-original-sender\r\n         :x-original-authentication-results:precedence:mailing-list:list-id\r\n         :list-post:list-help:list-archive:sender:list-subscribe\r\n         :list-unsubscribe:content-type;\r\n        bh=S93aUNffSQ02BGGp6kBp9+O4oSk6KHLXs9FeZxqJsGE=;\r\n        b=sX68H3LW7I7r6cSd1R/nNx6/fsCYzp0rUMkRay6hAb8SSnZTv+1+0Fdja7F+b/4sqM\r\n         hXsuqwFtmcB/2ImrJOX/eL4Pc2cLFRbNu8ULHoj+i4hF2Yx3KZhmqyDwhvnXDdo4anPC\r\n         FJWVc3VYwlNtHG5k4iaEKsGpfpt9sYeX+fL29OoIZ2rA6b0k24o6hKy319JfR/0Ivu9s\r\n         nF82W5cMaR3RJWgfcU5jnHhs1D2myXvzuVHGSn1k1K8/zQq2lsm15ejc9s+aOT3JmGRK\r\n         XMlvweEAqdb0Z+H4NvledosehUZiH8xPpCjmsQtZ/rynwpiyj6NfYq26vRcnz+aHFSd3\r\n         ZmOg==",
+  "Date" : "Mon, 1 Sep 2014 21:46:25 +0200",
+  "Delivered-To" : "gnani.swami@gmail.com",
+  "From" : [ {
+    "address" : "google@rkuhn.info",
+    "personal" : "Roland Kuhn",
+    "type" : "rfc822",
+    "group" : false
+  } ],
+  "List-Archive" : "<http://groups.google.com/group/scala-user",
+  "List-Help" : "<http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>",
+  "List-ID" : "<scala-user.googlegroups.com>",
+  "List-Post" : "<http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>",
+  "List-Subscribe" : "<http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>",
+  "List-Unsubscribe" : "<mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,\r\n <http://groups.google.com/group/scala-user/subscribe>",
+  "Mailing-list" : "list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com",
+  "Message Number" : 0,
+  "Message-Id" : "<5BB9BF79-B11A-45AC-9E6A-AF65965537BD@rkuhn.info>",
+  "MessageId" : "<5BB9BF79-B11A-45AC-9E6A-AF65965537BD@rkuhn.info>",
+  "Mime-Version" : "1.0 (Mac OS X Mail 7.3 \\(1878.6\\))",
+  "Precedence" : "list",
+  "Received" : "from [IPv6:::1] (localhost [IPv6:::1])\r\n\tby rk.fritz.box (Postfix) with ESMTP id 6A7A718B0001;\r\n\tMon,  1 Sep 2014 21:46:25 +0200 (CEST)",
+  "Received Date" : null,
+  "Received-SPF" : "none (google.com: google@rkuhn.info does not designate permitted sender hosts) client-ip=188.40.99.246;",
+  "Recipients" : [ {
+    "address" : "scala-user@googlegroups.com",
+    "personal" : "scala-user",
+    "type" : "rfc822",
+    "group" : false
+  } ],
+  "ReplyTo" : [ {
+    "address" : "google@rkuhn.info",
+    "personal" : "Roland Kuhn",
+    "type" : "rfc822",
+    "group" : false
+  } ],
+  "Return-Path" : "<scala-user+bncBC45NRWPXEIRBE42SOQAKGQEEVYZYMA@googlegroups.com>",
+  "Send Date" : 1409600785000,
+  "Sender" : {
+    "address" : "scala-user@googlegroups.com",
+    "personal" : null,
+    "type" : "rfc822",
+    "group" : false
+  },
+  "Subject" : "[scala-user] assumed variance of Java interfaces",
+  "To" : "scala-user <scala-user@googlegroups.com>",
+  "X-BeenThere" : "scala-user@googlegroups.com",
+  "X-Google-Group-Id" : "163218044152",
+  "X-Mailer" : "Apple Mail (2.1878.6)",
+  "X-Original-Authentication-Results" : "gmr-mx.google.com;       spf=neutral\r\n (google.com: google@rkuhn.info does not designate permitted sender hosts) smtp.mail=google@rkuhn.info",
+  "X-Original-Sender" : "google@rkuhn.info",
+  "X-Received" : "by 10.112.95.228 with SMTP id dn4mr2748310lbb.2.1409600787131;\r\n        Mon, 01 Sep 2014 12:46:27 -0700 (PDT)"
+}

@@ -17,6 +17,10 @@ libraryDependencies ++=Seq(
   "org.scalatest" %% "scalatest" % "2.2.1"// % "test"
 )
 
+
+libraryDependencies += "com.thoughtworks.xstream" % "xstream" % "1.4.7" withSources()
+libraryDependencies += "com.google.code.gson" % "gson" % "2.3.1" withSources()
+libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.5.0"
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.5.0" withSources()
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.5.0" withSources()
 libraryDependencies += "com.sun.mail" % "javax.mail" % "1.5.2" withSources()
