@@ -9,9 +9,24 @@ logLevel:=Level.Info
 resolvers ++= Seq("Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
                   "Sonatype snapshots"  at "http://oss.sonatype.org/content/repositories/snapshots/")
 
+javacOptions += "-g:none"
+javacOptions ++= Seq("-source", "1.7")
+compileOrder := CompileOrder.JavaThenScala
 
 libraryDependencies ++=Seq(
-  "net.sourceforge.htmlcleaner" % "htmlcleaner" % "2.4",
-  "net.liftweb" %% "lift-json" % "2.6-M4",
-  "org.scalatest" %% "scalatest" % "2.2.0"// % "test"
+  "org.scalatest" %% "scalatest" % "2.2.1"// % "test"
 )
+
+libraryDependencies += "com.sun.mail" % "javax.mail" % "1.5.2"
+libraryDependencies += "javax.mail" % "javax.mail-api" % "1.5.2"
+libraryDependencies += "org.apache.james" % "apache-mime4j" % "0.7.2"
+libraryDependencies += 	"org.elasticsearch" % "elasticsearch" % "1.4.2" withSources()
+libraryDependencies += "org.apache.derby" % "derby" % "10.4.1.3" % "test"
+
+
+libraryDependencies <++= (scalaVersion)(sv =>
+Seq(
+    "org.apache.commons" % "commons-io" % "1.3.2" withSources(),
+    "commons-lang" % "commons-lang" % "2.6" withSources(),
+    "junit" % "junit" % "4.12"
+))

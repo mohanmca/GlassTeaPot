@@ -1,0 +1,160 @@
+Delivered-To: gnani.swami@gmail.com
+Received: by 10.25.170.147 with SMTP id t141csp581521lfe;
+        Mon, 1 Sep 2014 12:46:31 -0700 (PDT)
+Return-Path: <scala-user+bncBC45NRWPXEIRBE42SOQAKGQEEVYZYMA@googlegroups.com>
+Received-SPF: pass (google.com: domain of scala-user+bncBC45NRWPXEIRBE42SOQAKGQEEVYZYMA@googlegroups.com designates 10.152.7.226 as permitted sender) client-ip=10.152.7.226
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of scala-user+bncBC45NRWPXEIRBE42SOQAKGQEEVYZYMA@googlegroups.com designates 10.152.7.226 as permitted sender) smtp.mail=scala-user+bncBC45NRWPXEIRBE42SOQAKGQEEVYZYMA@googlegroups.com;
+       dkim=pass header.i=@googlegroups.com
+X-Received: from mr.google.com ([10.152.7.226])
+        by 10.152.7.226 with SMTP id m2mr3243151laa.0.1409600791372 (num_hops = 1);
+        Mon, 01 Sep 2014 12:46:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=from:date:subject:to:message-id:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:sender:list-subscribe
+         :list-unsubscribe:content-type;
+        bh=S93aUNffSQ02BGGp6kBp9+O4oSk6KHLXs9FeZxqJsGE=;
+        b=sX68H3LW7I7r6cSd1R/nNx6/fsCYzp0rUMkRay6hAb8SSnZTv+1+0Fdja7F+b/4sqM
+         hXsuqwFtmcB/2ImrJOX/eL4Pc2cLFRbNu8ULHoj+i4hF2Yx3KZhmqyDwhvnXDdo4anPC
+         FJWVc3VYwlNtHG5k4iaEKsGpfpt9sYeX+fL29OoIZ2rA6b0k24o6hKy319JfR/0Ivu9s
+         nF82W5cMaR3RJWgfcU5jnHhs1D2myXvzuVHGSn1k1K8/zQq2lsm15ejc9s+aOT3JmGRK
+         XMlvweEAqdb0Z+H4NvledosehUZiH8xPpCjmsQtZ/rynwpiyj6NfYq26vRcnz+aHFSd3
+         ZmOg==
+X-Received: by 10.152.7.226 with SMTP id m2mr358143laa.0.1409600791353;
+        Mon, 01 Sep 2014 12:46:31 -0700 (PDT)
+X-BeenThere: scala-user@googlegroups.com
+Received: by 10.152.20.227 with SMTP id q3ls488117lae.109.gmail; Mon, 01 Sep
+ 2014 12:46:27 -0700 (PDT)
+X-Received: by 10.112.95.228 with SMTP id dn4mr2748310lbb.2.1409600787131;
+        Mon, 01 Sep 2014 12:46:27 -0700 (PDT)
+Received: from mailhost.rkuhn.info (rk.rkuhn.info. [188.40.99.246])
+        by gmr-mx.google.com with ESMTP id b6si366829lbd.1.2014.09.01.12.46.26
+        for <scala-user@googlegroups.com>;
+        Mon, 01 Sep 2014 12:46:26 -0700 (PDT)
+Received-SPF: none (google.com: google@rkuhn.info does not designate permitted sender hosts) client-ip=188.40.99.246;
+Received: from localhost (localhost [127.0.0.1])
+	by mailhost.rkuhn.info (Postfix) with ESMTP id 2D12B3F80B0;
+	Mon,  1 Sep 2014 21:46:26 +0200 (CEST)
+Received: from mailhost.rkuhn.info ([127.0.0.1])
+	by localhost (rk.rkuhn.info [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id zBxGKJ34kNcL; Mon,  1 Sep 2014 21:46:26 +0200 (CEST)
+Received: from rk.fritz.box (x590c4f68.dyn.telefonica.de [89.12.79.104])
+	by mailhost.rkuhn.info (Postfix) with ESMTPS id D021C3F80AE;
+	Mon,  1 Sep 2014 21:46:25 +0200 (CEST)
+Received: from [IPv6:::1] (localhost [IPv6:::1])
+	by rk.fritz.box (Postfix) with ESMTP id 6A7A718B0001;
+	Mon,  1 Sep 2014 21:46:25 +0200 (CEST)
+From: Roland Kuhn <google@rkuhn.info>
+Date: Mon, 1 Sep 2014 21:46:25 +0200
+Subject: [scala-user] assumed variance of Java interfaces
+To: scala-user <scala-user@googlegroups.com>
+Message-Id: <5BB9BF79-B11A-45AC-9E6A-AF65965537BD@rkuhn.info>
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+X-Mailer: Apple Mail (2.1878.6)
+X-Original-Sender: google@rkuhn.info
+X-Original-Authentication-Results: gmr-mx.google.com;       spf=neutral
+ (google.com: google@rkuhn.info does not designate permitted sender hosts) smtp.mail=google@rkuhn.info
+Precedence: list
+Mailing-list: list scala-user@googlegroups.com; contact scala-user+owners@googlegroups.com
+List-ID: <scala-user.googlegroups.com>
+X-Google-Group-Id: 163218044152
+List-Post: <http://groups.google.com/group/scala-user/post>, <mailto:scala-user@googlegroups.com>
+List-Help: <http://groups.google.com/support/>, <mailto:scala-user+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/scala-user
+Sender: scala-user@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/scala-user/subscribe>, <mailto:scala-user+subscribe@googlegroups.com>
+List-Unsubscribe: <mailto:googlegroups-manage+163218044152+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/group/scala-user/subscribe>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_5B04E8C4-0D0A-4CAA-931B-781EE703889A"
+
+--Apple-Mail=_5B04E8C4-0D0A-4CAA-931B-781EE703889A
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+Hi all,
+
+we=E2=80=99re currently working on a DSL involving Reactive Streams types l=
+ike Publisher[T] (yes, I realize that subscribe should employ use-site vari=
+ance)  which owing to their Java origin are devoid of variance annotations.=
+ This particular type is in fact covariant in T, which means that currently=
+ within our DSL structure we need to use @uncheckedVariance in order to ach=
+ieve the desired variance for our Flow[-In, +Out] type which interfaces wit=
+h the Reactive Streams types.
+
+While this is workable, it leaves an awkward feeling because even though I =
+verified with suitably variant surrogates that everything is fine, someone =
+might introduce breakage later during a refactoring. Would it not be safer =
+to offer @assumedCovariant and @assumedContravariant instead of the ambiguo=
+us @uncheckedVariance? That way we could at least inspect that Publisher wa=
+s only ever @assumedCovariant and Subscriber @assumedContravariant, which i=
+s difficult to verify now that @uncheckedVariance completely disables all t=
+ests.
+
+Regards,
+
+
+Dr.=E2=80=89Roland Kuhn
+Akka Tech Lead
+Typesafe =E2=80=93 Reactive apps on the JVM.
+twitter: @rolandkuhn
+
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+scala-user" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to scala-user+unsubscribe@googlegroups.com.
+For more options, visit https://groups.google.com/d/optout.
+
+--Apple-Mail=_5B04E8C4-0D0A-4CAA-931B-781EE703889A
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html charset=
+=3Dutf-8"></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: s=
+pace; -webkit-line-break: after-white-space;">Hi all,<div><br></div><div>we=
+=E2=80=99re currently working on a DSL involving Reactive Streams types lik=
+e&nbsp;<a href=3D"https://github.com/reactive-streams/reactive-streams/blob=
+/master/api/src/main/java/org/reactivestreams/Publisher.java">Publisher[T]<=
+/a>&nbsp;(yes, I realize that&nbsp;<a href=3D"https://github.com/reactive-s=
+treams/reactive-streams/issues/104">subscribe should employ use-site varian=
+ce</a>)&nbsp; which owing to their Java origin are devoid of variance annot=
+ations. This particular type is in fact covariant in T, which means that cu=
+rrently within our DSL structure we need to use @uncheckedVariance in order=
+ to achieve the desired variance for our Flow[-In, +Out] type which interfa=
+ces with the Reactive Streams types.</div><div><br></div><div>While this is=
+ workable, it leaves an awkward feeling because even though I verified with=
+ suitably variant surrogates that everything is fine, someone might introdu=
+ce breakage later during a refactoring. Would it not be safer to offer @ass=
+umedCovariant and @assumedContravariant instead of the ambiguous @unchecked=
+Variance? That way we could at least inspect that Publisher was only ever @=
+assumedCovariant and Subscriber @assumedContravariant, which is difficult t=
+o verify now that @uncheckedVariance completely disables all tests.<br><div=
+ apple-content-edited=3D"true"><span class=3D"Apple-style-span" style=3D"bo=
+rder-collapse: separate; border-spacing: 0px;"><br></span></div><div apple-=
+content-edited=3D"true">
+<span class=3D"Apple-style-span" style=3D"border-collapse: separate; border=
+-spacing: 0px;">Regards,</span></div><div apple-content-edited=3D"true"><sp=
+an class=3D"Apple-style-span" style=3D"border-collapse: separate; border-sp=
+acing: 0px;"><br><br><b>Dr.=E2=80=89Roland Kuhn</b><br><i>Akka Tech Lead</i=
+><br><a href=3D"http://typesafe.com/">Typesafe</a>&nbsp;=E2=80=93&nbsp;Reac=
+tive apps on the JVM.<br>twitter:&nbsp;<a href=3D"http://twitter.com/#!/rol=
+andkuhn">@rolandkuhn<br></a><br><span class=3D"Apple-style-span" style=3D"f=
+ont-family: Helvetica; "></span></span>
+</div>
+<br></div></body></html>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;scala-user&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:scala-user+unsubscribe@googlegroups.com">scala-us=
+er+unsubscribe@googlegroups.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br />
+
+--Apple-Mail=_5B04E8C4-0D0A-4CAA-931B-781EE703889A--
