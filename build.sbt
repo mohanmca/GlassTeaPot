@@ -26,6 +26,7 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.5.
 libraryDependencies += "com.sun.mail" % "javax.mail" % "1.5.2" withSources()
 libraryDependencies += "javax.mail" % "javax.mail-api" % "1.5.2" withSources()
 libraryDependencies += 	"org.elasticsearch" % "elasticsearch" % "1.4.2" withSources()
+libraryDependencies += "commons-io" % "commons-io" % "2.4" withSources()
 libraryDependencies += "org.apache.derby" % "derby" % "10.4.1.3" % "test"
 
 
