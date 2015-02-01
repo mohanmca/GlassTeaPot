@@ -20,7 +20,7 @@
 	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/com.sun.mail/javax.mail/jars/javax.mail-1.5.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/javax.activation/activation/jars/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/javax.mail/javax.mail-api/jars/javax.mail-api-1.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/org.elasticsearch/elasticsearch/jars/elasticsearch-1.4.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/org.elasticsearch/elasticsearch/jars/elasticsearch-1.4.2.jar" sourcepath="C:/Users/mohan/.ivy2/cache/org.elasticsearch/elasticsearch/srcs/elasticsearch-1.4.2-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/org.apache.lucene/lucene-core/jars/lucene-core-4.10.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/org.apache.lucene/lucene-analyzers-common/jars/lucene-analyzers-common-4.10.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mohan/.ivy2/cache/org.apache.lucene/lucene-queries/jars/lucene-queries-4.10.2.jar"/>
