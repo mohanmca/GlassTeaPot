@@ -122,7 +122,11 @@ Classic Javascript
 Notes from Eric Elliott's talk at the fluent conference
 JavaScript has FREEDOM.
 
-In classical inheritance you have tight coupling brought on by the parent-child relationship. This is good in some areas but as the project grows, making changes to the parent that ripple through the descendants can be a big burden and error/bug prone. Thus, the need for duplication by necessity. This is the situation where you have a class that does almost everything you want but it needs to do something a little differently so you create a very identical class for your new need. This is caused by the gorilla banana problem. Where you want a banana but what you got was a gorilla holding the banana and the entire jungle. The problem with object-oriented languages is they've got all this implicit environment that they carry around with them.
+In classical inheritance you have tight coupling brought on by the parent-child relationship. 
+This is good in some areas but as the project grows, making changes to the parent that ripple through the descendants can be a big burden and error/bug prone. 
+Thus, the need for duplication by necessity. This is the situation where you have a class that does almost everything you want but it needs to do something a little differently so you create a very identical class for your new need. 
+This is caused by the gorilla banana problem. Where you want a banana but what you got was a gorilla holding the banana and the entire jungle. 
+The problem with object-oriented languages is they've got all this implicit environment that they carry around with them.
 
 JavaScript has inheritance that does not have these problems.
 
@@ -139,7 +143,8 @@ Three types of prototype:
 */
 
 /*
-1. Delegate prototype - when you can't find the mehtod you are looking for you look for it in the prototype; you are delegating this happen. This makes flyweights free.
+1. Delegate prototype - when you can't find the mehtod you are looking for you look for it in the prototype; 
+you are delegating this happen. This makes flyweights free.
 */
 
 //old way
@@ -151,7 +156,9 @@ Greeter.prototype.hello = function hello(){
 }
 var george = new Greeter('George');
 /*
-we create a constructor, attach a method to its prototype, then instantiate an object with the new keyword. This is weird because you don't need the new keyword in javascript because you can just create an object literal and there you have your object. And the whole constructor business seems to be there to please the people who are used to the constructor style of doing things
+we create a constructor, attach a method to its prototype, then instantiate an object with the new keyword.
+This is weird because you don't need the new keyword in javascript because you can just create an object literal and there you have your object. 
+And the whole constructor business seems to be there to please the people who are used to the constructor style of doing things
 */
 
 //new way
@@ -164,13 +171,15 @@ var proto = {
 var george = Object.create(proto);
 george.name = 'George';
 /*
-create the prototype object, pass that prototype to Object.create() and there is your new object. You can now set any property you want on that object because JavaScript has dynamic object extending abilities.
+create the prototype object, pass that prototype to Object.create() and there is your new object. 
+You can now set any property you want on that object because JavaScript has dynamic object extending abilities.
 */
 
 
 
 /* 
-2. Cloning / Concatenation - creating a new object from all of the copied properties. Used a lot for default state or mixins
+2. Cloning / Concatenation - creating a new object from all of the copied properties. 
+Used a lot for default state or mixins
 */
 
 //mixin style
@@ -181,7 +190,9 @@ var proto = {
 };
 var george = _.extend({}, proto, { name : 'George'});
 /*
-Create your prototype (this is where you can set like your default state for things), and then use a utility function like $.extend(obj1, obj2, ...objN); - These usually copy all of the methods and properties of the object to the right of the first object into the first object. Going in left to right order, this provides sort of overriding.
+Create your prototype (this is where you can set like your default state for things), 
+and then use a utility function like $.extend(obj1, obj2, ...objN); - These usually copy all of the methods and properties of the object to the right of the first object into the first object. 
+Going in left to right order, this provides sort of overriding.
 */
 
 /* 
